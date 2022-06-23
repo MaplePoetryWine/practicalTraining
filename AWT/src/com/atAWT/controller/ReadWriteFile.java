@@ -13,8 +13,9 @@ import java.util.*;
  */
 @SuppressWarnings("all")
 public class ReadWriteFile {
-    //test注释
-    //test注释2
+    private static final int repaceName = 0;
+    private static final int repaceTel = 1;
+    private static final int repaceBalance = 2;
     /**
      * 读取txt文件中的全部个人信息读取到内存上然后添加到Map中
      * 用Hashtable的原因是不能存放null值
@@ -126,11 +127,14 @@ public class ReadWriteFile {
     }
 
     /**
-     * @param fileName 修改文件的路径
-     * @param deleted  被修改的内容
-     * @param delete   修改后的内容
+     *
+     * @param fileName 读取文件的位置
+     * @param replaceFileName 写文件的位置
+     * @param deleted 要替换的东西
+     * @param type  替换的类型 0 修改名字  1 修改 电话号码  2 修改  余额
+     * @param delete
      */
-    public static void replace(String fileName, String replaceFileName, String deleted, String delete) {
+    public static void replace(String fileName, String replaceFileName, String deleted,int type, String delete) {
         BufferedReader br = null;
         BufferedWriter bw = null;
         try {
@@ -138,9 +142,28 @@ public class ReadWriteFile {
             bw = new BufferedWriter(new FileWriter(replaceFileName));
             String line;
             while ((line = br.readLine()) != null) {
-                if (line.contains(deleted))
-                    line = line.replace(deleted, delete);
-                bw.write(line + "\n");
+                String[] split = line.split("=");
+                switch (type){
+                    case repaceName:
+                        if (split[2].contains(deleted))
+                            split[2] = delete;
+                        bw.write(split[0]+ "=" + split[1] + "=" + split[2]+ "=" +split[3]+ "="
+                                +split[4]+ "=" + split[5]);
+                        break;
+                    case repaceTel:
+                        if (split[4].contains(deleted))
+                            split[4] = delete;
+                        bw.write(split[0]+ "=" + split[1] + "=" + split[2]+ "=" +split[3]+ "="
+                                +split[4]+ "=" + split[5]);
+                        break;
+                    case repaceBalance:
+                        if (split[5].contains(deleted))
+                            split[5] = delete;
+                        bw.write(split[0]+ "=" + split[1] + "=" + split[2]+ "=" +split[3]+ "="
+                                +split[4]+ "=" + split[5]);
+                        break;
+                }
+                bw.write("\n"+line );
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

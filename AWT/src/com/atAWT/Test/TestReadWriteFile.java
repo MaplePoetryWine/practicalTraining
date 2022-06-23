@@ -2,6 +2,7 @@ package com.atAWT.Test;
 
 import com.atAWT.controller.ReadWriteFile;
 import com.atAWT.model.Account;
+import org.junit.Test;
 
 import java.util.Map;
 
@@ -10,7 +11,6 @@ import java.util.Map;
  * @create 2022-06-23 10:41
  */
 public class TestReadWriteFile {
-    //测试注释
     public static final String Account_FILENAME ="AWT\\src\\CreditAccount.txt";
     public static final String Account1_FILENAME ="AWT\\src\\Account1.txt";
 
@@ -27,5 +27,15 @@ public class TestReadWriteFile {
 //        while (true){
 //            System.out.println(account1.getID());
 //        }
+    }
+    @Test
+    public void test(){
+        Account account = new Account();
+        boolean transfer = account.transfer(10007, 999);
+        if (transfer){
+            System.out.println("修改成功！！！");
+        }else {
+            System.out.println("修改失败！！！");
+        }
     }
 }

@@ -1,11 +1,9 @@
 package com.atAWT.model;
 
+import com.atAWT.controller.ReadWriteFile;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * 账户
@@ -125,10 +123,38 @@ public class Account {
      */
     public void withs(double money) {
         if (balance < money) {
+            String err = "余额不足！";
             System.out.println("余额不足！");
         }
         balance -= money;
         System.out.println("取款成功！");
     }
 
+    String FILENAME = "AWT\\src\\LoanAccount.txt";
+    String REPACEFILENAME ="AWT\\src\\LoanAccountcopy.txt";
+
+
+    /**
+     * 转账
+     * @param ID 转账的账号
+     * @return
+     */
+    public  boolean transfer(int ID,double money){
+        Map<Integer, String> map = ReadWriteFile.Login_AccountFile(FILENAME);
+        Set<Integer> keySet = map.keySet();
+        for (Integer key: keySet ){
+            if (key == ID){
+                Map<Integer, Account> integerAccountMap = ReadWriteFile.readTxtFile(FILENAME);
+                Set<Integer> integers = integerAccountMap.keySet();
+                for (Integer key1 : integers){
+                    if (key1 == ID){
+                        Account account = integerAccountMap.get(ID);
+                        ReadWriteFile.replace(FILENAME,REPACEFILENAME,String.valueOf(account.getBalance()),2,String.valueOf(money));
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
