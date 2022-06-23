@@ -10,6 +10,7 @@ import java.util.Map;
  * @create 2022-06-23 10:41
  */
 public class TestReadWriteFile {
+    //测试注释
     public static final String Account_FILENAME ="AWT\\src\\CreditAccount.txt";
     public static final String Account1_FILENAME ="AWT\\src\\Account1.txt";
 
