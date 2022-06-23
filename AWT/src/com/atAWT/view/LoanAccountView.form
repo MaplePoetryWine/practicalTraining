@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.LoanAccountView">
+  <grid id="27dc6" layout-manager="FormLayout">
+    <rowspec value="center:34px:noGrow"/>
+    <rowspec value="top:26dlu:noGrow"/>
+    <rowspec value="center:15dlu:grow"/>
+    <rowspec value="center:d:grow"/>
+    <rowspec value="center:15dlu:grow"/>
+    <rowspec value="center:d:grow"/>
+    <rowspec value="center:15dlu:grow"/>
+    <rowspec value="center:d:grow"/>
+    <rowspec value="center:15dlu:grow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:15dlu:noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:15dlu:noGrow"/>
+    <rowspec value="top:4dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <rowspec value="top:50dlu:noGrow"/>
+    <rowspec value="center:max(d;4px):noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <colspec value="left:105dlu:noGrow"/>
+    <colspec value="left:120dlu:noGrow"/>
+    <colspec value="left:81dlu:noGrow"/>
+    <colspec value="fill:max(d;4px):noGrow"/>
+    <constraints>
+      <xy x="20" y="12" width="638" height="477"/>
+    </constraints>
+    <properties>
+      <background color="-8355712"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="5ae02" class="javax.swing.JButton" binding="查看余额Button" default-binding="true">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="查看余额"/>
+        </properties>
+      </component>
+      <component id="7cdf3" class="javax.swing.JButton" binding="查看贷款总额Button" default-binding="true">
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="查看贷款总额"/>
+        </properties>
+      </component>
+      <component id="5a051" class="javax.swing.JButton" binding="贷款Button" default-binding="true">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="贷款"/>
+        </properties>
+      </component>
+      <component id="cf2df" class="javax.swing.JButton" binding="还款Button" default-binding="true">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="还款"/>
+        </properties>
+      </component>
+      <component id="3f050" class="javax.swing.JButton" binding="存款Button" default-binding="true">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="存款"/>
+        </properties>
+      </component>
+      <component id="a1554" class="javax.swing.JButton" binding="取款Button" default-binding="true">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="取款"/>
+        </properties>
+      </component>
+      <component id="70d9c" class="javax.swing.JButton" binding="转账Button" default-binding="true">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="转账"/>
+        </properties>
+      </component>
+      <component id="b84b7" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <font name="Consolas" size="18" style="3"/>
+          <text value="欢迎来到非管理员账户界面"/>
+        </properties>
+      </component>
+      <component id="5cf78" class="javax.swing.JButton" binding="查看个人信息Button" default-binding="true">
+        <constraints>
+          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="查看个人信息"/>
+        </properties>
+      </component>
+      <component id="9bd1b" class="javax.swing.JButton" binding="修改个人信息Button" default-binding="true">
+        <constraints>
+          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <forms defaultalign-horz="false" defaultalign-vert="false"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Arial Black" size="18" style="1"/>
+          <text value="修改个人信息"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
