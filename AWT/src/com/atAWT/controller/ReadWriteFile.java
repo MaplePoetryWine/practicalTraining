@@ -148,22 +148,21 @@ public class ReadWriteFile {
                         if (split[2].contains(deleted))
                             split[2] = delete;
                         bw.write(split[0]+ "=" + split[1] + "=" + split[2]+ "=" +split[3]+ "="
-                                +split[4]+ "=" + split[5]);
+                                +split[4]+ "=" + split[5] + "\n");
                         break;
                     case repaceTel:
                         if (split[4].contains(deleted))
                             split[4] = delete;
                         bw.write(split[0]+ "=" + split[1] + "=" + split[2]+ "=" +split[3]+ "="
-                                +split[4]+ "=" + split[5]);
+                                +split[4]+ "=" + split[5] + "\n");
                         break;
                     case repaceBalance:
                         if (split[5].contains(deleted))
                             split[5] = delete;
                         bw.write(split[0]+ "=" + split[1] + "=" + split[2]+ "=" +split[3]+ "="
-                                +split[4]+ "=" + split[5]);
+                                +split[4]+ "=" + split[5] + "\n");
                         break;
                 }
-                bw.write("\n"+line );
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

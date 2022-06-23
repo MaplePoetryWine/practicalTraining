@@ -130,11 +130,12 @@ public class Account {
         System.out.println("取款成功！");
     }
 
-    String FILENAME = "AWT\\src\\LoanAccount.txt";
-    String REPACEFILENAME ="AWT\\src\\LoanAccountcopy.txt";
+    String FILENAME = "src\\LoanAccount.txt";
+    String REPACEFILENAME ="src\\LoanAccountcopy.txt";
 
 
     /**
+     * 写到了另一个文件里面了,后期需要修改，尽量写到一个文件里面，以便反复利用。
      * 转账
      * @param ID 转账的账号
      * @return
