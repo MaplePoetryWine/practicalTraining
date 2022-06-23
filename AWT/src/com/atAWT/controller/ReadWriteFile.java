@@ -132,7 +132,7 @@ public class ReadWriteFile {
      * @param replaceFileName 写文件的位置
      * @param deleted 要替换的东西
      * @param type  替换的类型 0 修改名字  1 修改 电话号码  2 修改  余额
-     * @param delete
+     * @param delete 替换后的东西
      */
     public static void replace(String fileName, String replaceFileName, String deleted,int type, String delete) {
         BufferedReader br = null;

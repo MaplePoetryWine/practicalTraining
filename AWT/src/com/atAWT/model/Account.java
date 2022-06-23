@@ -150,7 +150,8 @@ public class Account {
                 for (Integer key1 : integers){
                     if (key1 == ID){
                         Account account = integerAccountMap.get(ID);
-                        ReadWriteFile.replace(FILENAME,REPACEFILENAME,String.valueOf(account.getBalance()),2,String.valueOf(money));
+                        ReadWriteFile.replace(FILENAME,REPACEFILENAME,String.valueOf(account.getBalance()),2,String.valueOf((account.getBalance() + money)));
+                        setBalance(getBalance() - money);
                         return true;
                     }
                 }
