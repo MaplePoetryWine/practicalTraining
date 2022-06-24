@@ -30,7 +30,7 @@ public class Login extends JFrame {
                     prompt.setText("登录失败！！！");
                 }else {
                     prompt.setText("登录成功！！！");
-                    Surface surface = new Surface();
+                    Surface surface = new Surface(isTrue);
                 }
             }
         });

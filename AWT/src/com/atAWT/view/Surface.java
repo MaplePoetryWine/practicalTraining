@@ -25,7 +25,7 @@ public class Surface extends JFrame{
     private JPanel surface;
 
 
-    public Surface() {
+    public Surface(Account account) {
         this.add(surface);
         checkBalanceButton.addMouseListener(new MouseAdapter() {
             @Override
@@ -40,7 +40,7 @@ public class Surface extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                PersonInfo personInfo = new PersonInfo();
+                PersonInfo personInfo = new PersonInfo(account);
             }
         });
     }
