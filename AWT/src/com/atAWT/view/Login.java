@@ -6,9 +6,9 @@ import javax.swing.*;
  * @author wspstart
  * @create 2022-06-24 15:44
  */
-public class Regist {
+public class Login {
     private JTextField textField1;
     private JPasswordField passwordField1;
-    private JButton 登录Button;
-    private JButton 注册Button;
+    private JButton loginbutton;
+    private JButton registerbutton;
 }

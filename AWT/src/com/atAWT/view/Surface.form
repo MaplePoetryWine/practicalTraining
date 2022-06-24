@@ -9,7 +9,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="41755" class="javax.swing.JButton" binding="查看贷款余额Button" default-binding="true">
+      <component id="41755" class="javax.swing.JButton" binding="ViewLoanBalanceButton">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -20,7 +20,7 @@
           <text value="查看贷款余额"/>
         </properties>
       </component>
-      <component id="47e2" class="javax.swing.JButton" binding="贷款Button" default-binding="true">
+      <component id="47e2" class="javax.swing.JButton" binding="loanButton">
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -31,7 +31,7 @@
           <text value="贷款"/>
         </properties>
       </component>
-      <component id="4ba87" class="javax.swing.JButton" binding="取款Button" default-binding="true">
+      <component id="4ba87" class="javax.swing.JButton" binding="withdrawalButton">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -42,7 +42,7 @@
           <text value="取款"/>
         </properties>
       </component>
-      <component id="ef15f" class="javax.swing.JButton" binding="转账Button" default-binding="true">
+      <component id="ef15f" class="javax.swing.JButton" binding="TransferButton">
         <constraints>
           <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -53,7 +53,7 @@
           <text value="转账"/>
         </properties>
       </component>
-      <component id="acb" class="javax.swing.JButton" binding="查看个人信息Button" default-binding="true">
+      <component id="acb" class="javax.swing.JButton" binding="viewPersonalInformationButton">
         <constraints>
           <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -64,7 +64,7 @@
           <text value="查看个人信息"/>
         </properties>
       </component>
-      <component id="945f4" class="javax.swing.JButton" binding="修改个人信息Button" default-binding="true">
+      <component id="945f4" class="javax.swing.JButton" binding="modifyPersonalInformationButton">
         <constraints>
           <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -75,7 +75,7 @@
           <text value="修改个人信息"/>
         </properties>
       </component>
-      <component id="9b03e" class="javax.swing.JButton" binding="查看余额Button" default-binding="true">
+      <component id="9b03e" class="javax.swing.JButton" binding="checkBalanceButton">
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
