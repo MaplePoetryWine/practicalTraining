@@ -13,6 +13,7 @@ import java.util.*;
  */
 @SuppressWarnings("all")
 public class ReadWriteFile {
+    //测试注释2
     private static final int repaceName = 0;
     private static final int repaceTel = 1;
     private static final int repaceBalance = 2;
