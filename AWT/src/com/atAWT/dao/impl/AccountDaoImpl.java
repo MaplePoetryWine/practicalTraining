@@ -7,6 +7,7 @@ import com.atAWT.dao.AccountDao;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class AccountDaoImpl implements AccountDao {
@@ -14,7 +15,7 @@ public class AccountDaoImpl implements AccountDao {
     /**
      * 存放所有用户，用于序列化对象
      */
-    public static List<Account> list = new ArrayList<>();
+    public static HashMap<Integer, Account> map = new HashMap<>();
 
     /**
      * 类加载时自动读取已创建的对象
@@ -41,7 +42,7 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public boolean register(Account account) throws IOException, ClassNotFoundException {
         updateList();
-        list.add(account);
+        map.put(account.getID(), account);
         updateFile();
         return true;
     }
@@ -53,7 +54,7 @@ public class AccountDaoImpl implements AccountDao {
     private static void updateFile() throws IOException {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("AWT/src/com/atAWT/model/account.obj"))) {
 
-            oos.writeObject(list.toArray(new Account[0]));
+            oos.writeObject(map.values().toArray(new Account[0]));
             oos.flush();
 
         } catch (EOFException e) {
@@ -71,7 +72,9 @@ public class AccountDaoImpl implements AccountDao {
 
             Account[] arr = (Account[]) ois.readObject();
             if (arr != null) {
-                list = Arrays.asList(arr);
+                for (Account account : arr) {
+                    map.put(account.getID(), account);
+                }
             }
         } catch (EOFException e) {
             System.out.print("");

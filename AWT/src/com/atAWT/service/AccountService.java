@@ -46,7 +46,7 @@ public class AccountService {
 //        HashMap<Integer, Account> accountMap = U.accountMap;
 //        Collection<Account> accounts = accountMap.values();
 
-        List<Account> accounts = AccountDaoImpl.list;
+        Collection<Account> accounts = AccountDaoImpl.map.values();
         Set<String> set = new HashSet<>();
         for (Account otherAccount : accounts) {
             set.add(otherAccount.getPersonID());
@@ -70,11 +70,10 @@ public class AccountService {
 
     /**
      * 根据 id 查询对象
-     * @param id
+     * @param id 要查询的对象的 id
      * @return
      */
-    @Deprecated
     public Account selectById(Integer id) {
-        return U.accountMap.get(id);
+        return AccountDaoImpl.map.get(id);
     }
 }
