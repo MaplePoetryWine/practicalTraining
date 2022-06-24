@@ -45,6 +45,7 @@ public class U implements Serializable {
             loanMap = (HashMap<Integer, LoanAccount>)oil.readObject();
             accountMap = (HashMap<Integer, Account>)oia.readObject();
         }catch (Exception e){
+            e.printStackTrace();
             System.out.println("对象读取失败");
             writeObjError();
         }finally {
@@ -65,6 +66,13 @@ public class U implements Serializable {
     public static boolean addCount(Account account){
         int start = accountMap.size();
         accountMap.put(account.getID(),account);
+        if(account.getClass() == LoanAccount.class){
+            loanMap.put(account.getID(),(LoanAccount) account);
+        }else if(account.getClass() == CreditAccount.class){
+            creditMap.put(account.getID(),(CreditAccount) account);
+        }else if(account.getClass() == SavingAccount.class){
+            savingMap.put(account.getID(),(SavingAccount) account);
+        }
         writeAccount();
         int end = accountMap.size();
         return end - start == 1 ? true : false;
@@ -102,15 +110,27 @@ public class U implements Serializable {
     }
     public static void writeAccount(){
         ObjectOutputStream oos = null;
+        ObjectOutputStream ooc = null;
+        ObjectOutputStream ooa = null;
+        ObjectOutputStream ool = null;
         try {
-            oos = new ObjectOutputStream(new FileOutputStream(PATH + A));
-            oos.writeObject(accountMap);
+            oos = new ObjectOutputStream(new FileOutputStream(PATH + S));
+            oos.writeObject(savingMap);
+            ooc = new ObjectOutputStream(new FileOutputStream(PATH + C));
+            ooc.writeObject(creditMap);
+            ooa = new ObjectOutputStream(new FileOutputStream(PATH + C));
+            ooa.writeObject(accountMap);
+            ool = new ObjectOutputStream(new FileOutputStream(PATH + L));
+            ool.writeObject(loanMap);
         }catch (Exception e){
-            System.out.println("U的writeAccount方法异常");
+            System.out.println("writeAccount方法异常");
             e.printStackTrace();
         }finally {
             try{
                 oos.close();
+                ooa.close();
+                ool.close();
+                ooc.close();
             }catch (Exception e){
                 System.out.println("流对象关闭失败");
                 e.printStackTrace();

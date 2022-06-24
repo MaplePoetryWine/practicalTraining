@@ -33,6 +33,8 @@ public class Account {
         this.balance = balance;
     }
 
+    public Account() {
+    }
 
     public String getPassword() {
         return password;
