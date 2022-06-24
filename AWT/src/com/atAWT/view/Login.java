@@ -30,7 +30,8 @@ public class Login extends JFrame {
                     prompt.setText("登录失败！！！");
                 }else {
                     prompt.setText("登录成功！！！");
-                    Surface surface = new Surface(isTrue);
+                    Surface surface = new Surface(accountS,isTrue);
+                    toClose();
                 }
             }
         });
@@ -44,6 +45,10 @@ public class Login extends JFrame {
                 Regist regist = new Regist();
             }
         });
+    }
+
+    private void toClose() {
+        this.setVisible(false);
     }
 
 }

@@ -20,7 +20,13 @@ public class Regist extends JFrame{
     private JButton registerNowButton;
     private JPanel RegistPanel;
     private JLabel error;
-    private AccountService accountS = new AccountService();;
+    private JLabel personIderrorLabel;
+    private AccountService accountS = new AccountService();
+
+    /**
+     * 判断身份证号是否输入正确
+     */
+    private boolean personIdIsTrue = false;
 
     public Regist() {
         this.add(RegistPanel);
@@ -30,8 +36,8 @@ public class Regist extends JFrame{
                 super.mouseClicked(e);
                 Account account = new Account(passwordField1.getText(), nameField2.getText(), PersonIDField.getText(), telField3.getText());
                 Account register = accountS.register(account);
-                if (register == null){
-                    error.setText("注册失败！！！");
+                if (register == null && personIdIsTrue){
+                    error.setText("注册失败!请检查身份证号是否输入正确。");
                 } else {
                     error.setText(" 您的账号为：" + account.getID().toString());
                 }
@@ -40,5 +46,19 @@ public class Regist extends JFrame{
         this.setSize(500,600);
         this.setLocation(400,500);
         this.setVisible(true);
+        PersonIDField.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseExited(MouseEvent e) {
+                String personIDFieldStr = PersonIDField.getText();
+                if (personIDFieldStr.length() == 18 && personIDFieldStr.matches("^\\d+$")) {
+                    personIderrorLabel.setText("");
+                    personIdIsTrue = true;
+                } else if (personIDFieldStr.equals("")) {
+                    personIderrorLabel.setText("");
+                } else {
+                    personIderrorLabel.setText("X");
+                }
+            }
+        });
     }
 }

@@ -58,7 +58,13 @@ public class revisePersonInfo extends JFrame {
                     }else {
                         account.setTel(teltextField.getText());
                     }
+                    toClose();
             }
         });
     }
+
+    private void toClose() {
+        this.setVisible(false);
+    }
+
 }

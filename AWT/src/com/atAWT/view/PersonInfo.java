@@ -3,7 +3,8 @@ package com.atAWT.view;
 import com.atAWT.model.Account;
 
 import javax.swing.*;
-import java.awt.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * @author wspstart
@@ -17,6 +18,7 @@ public class PersonInfo extends JFrame{
     private JTextField teltextField5;
     private JTextField balancetextField6;
     private JPanel inofPanel;
+    private JButton OkButton;
 
     public PersonInfo(Account account)  {
         idtextField1.setText(account.getID().toString());
@@ -28,5 +30,16 @@ public class PersonInfo extends JFrame{
         this.add(inofPanel);
         this.setSize(400,600);
         this.setVisible(true);
+        OkButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                toClose();
+            }
+        });
+    }
+
+    private void toClose() {
+        this.setVisible(false);
     }
 }

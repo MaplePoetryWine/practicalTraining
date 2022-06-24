@@ -9,7 +9,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <component id="41755" class="javax.swing.JButton" binding="ViewLoanBalanceButton">
+      <component id="41755" class="javax.swing.JButton" binding="depositButton">
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -17,7 +17,7 @@
         <properties>
           <background color="-8355712"/>
           <font name="Consolas" size="18" style="1"/>
-          <text value="查看贷款余额"/>
+          <text value="存款"/>
         </properties>
       </component>
       <component id="47e2" class="javax.swing.JButton" binding="loanButton">
