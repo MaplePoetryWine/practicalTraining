@@ -1,12 +1,9 @@
 package com.atAWT.service;
 
+import com.atAWT.dao.impl.SavingAccountDao;
 import com.atAWT.model.U;
-import com.atAWT.utils.ReadWriteFile;
-import com.atAWT.model.Account;
 import com.atAWT.model.SavingAccount;
 
-import java.util.Map;
-import java.util.Set;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -58,7 +55,7 @@ public class SavingAccountService {
      */
     public String transfer(Integer payId, Integer payeeId, double amount) {
         lock.lock();
-        SavingAccount payAccount = U.savingMap.get(payId);
+        SavingAccount payAccount = SavingAccountDao.map.get(payId);
         SavingAccount payeeAccount = U.savingMap.get(payeeId);
 
         // 用户可能不存在

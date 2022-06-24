@@ -26,7 +26,7 @@ public class AccountService {
      * @return
      */
     public Account login(String accountId, String password) {
-        Account account = U.accountMap.get(Integer.parseInt(accountId));
+        Account account = AccountDaoImpl.map.get(Integer.parseInt(accountId));
         if (account != null
                 && password != null
                 && password.equals(account.getPassword())) {
