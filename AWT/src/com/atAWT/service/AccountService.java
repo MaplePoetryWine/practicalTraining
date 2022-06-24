@@ -116,8 +116,9 @@ public class AccountService {
      */
     public String transfer(Integer payId, Integer payeeId, double amount) {
         lock.lock();
-        SavingAccount payAccount = SavingAccountDao.map.get(payId);
-        SavingAccount payeeAccount = U.savingMap.get(payeeId);
+        Account payAccount = AccountDaoImpl.map.get(payId);
+        Account payeeAccount = AccountDaoImpl.map.get(payeeId);
+
 
         // 用户可能不存在
         if (payAccount == null) {
@@ -144,11 +145,11 @@ public class AccountService {
         } catch (Exception e) {
             if (payAccount.getBalance() != payBalance) {
                 payAccount.setBalance(payBalance);
-                U.savingMap.put(payId, payAccount);
+                AccountDaoImpl.map.put(payId, payAccount);
             }
             if (payeeAccount.getBalance() != payeeBalance) {
                 payeeAccount.setBalance(payeeBalance);
-                U.savingMap.put(payeeId, payeeAccount);
+                AccountDaoImpl.map.put(payeeId, payeeAccount);
             }
             return "error: 系统异常！转账失败";
         } finally {
