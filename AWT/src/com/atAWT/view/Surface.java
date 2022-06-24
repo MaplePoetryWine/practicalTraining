@@ -40,7 +40,7 @@ public class Surface extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
+                PersonInfo personInfo = new PersonInfo();
             }
         });
     }
