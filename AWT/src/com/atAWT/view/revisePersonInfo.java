@@ -34,6 +34,7 @@ public class revisePersonInfo extends JFrame {
         this.setVisible(true);
 
         确定Button.addMouseListener(new MouseAdapter() {
+            //test
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
