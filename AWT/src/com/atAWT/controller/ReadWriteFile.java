@@ -182,5 +182,38 @@ public class ReadWriteFile {
         }
     }
 
+    /**
+     * 该方法统计一个txt文件中的所有资产
+     * @param fileName
+     * @return
+     */
+    public static double getBalance(String fileName){
+        Map<Integer, Account> map = readTxtFile(fileName);
+        double sum = 0;
+        Set<Integer> keySet = map.keySet();
+        for (Integer ID :keySet){
+            Account account = map.get(ID);
+             sum += account.getBalance();
+        }
+        return sum;
+    }
+    public static Map<Integer,Double> getOneBalance(String fileName){
+        Map<Integer, Account> map = readTxtFile(fileName);
+        TreeMap<Double, Integer> treeMap = new TreeMap<>();
+        LinkedHashMap<Integer, Double> IDBalanceMap = new LinkedHashMap<>();
+        Set<Integer> keySet = map.keySet();
+        for (Integer ID : keySet){
+            Account account = map.get(ID);
+            double d = account.getBalance();
+            treeMap.put(d,ID);
+        }
+        Set<Double> bal = treeMap.keySet();
+        for (Double balance : bal){
+            Integer ID = treeMap.get(balance);
+            IDBalanceMap.put(ID,balance);
+        }
+        return IDBalanceMap;
+    }
+
 
 }

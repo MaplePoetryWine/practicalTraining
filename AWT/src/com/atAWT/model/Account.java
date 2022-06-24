@@ -135,7 +135,7 @@ public class Account {
 
 
     /**
-     * 写到了另一个文件里面了,后期需要修改，尽量写到一个文件里面，以便反复利用。
+     * 由于是替换余额的，本账号的余额要减少，被转号要增加，先写一个文件，存的是本号减少的，然后再 读取这个文件，将转账号的余额增加，所以原文件任为有效文件
      * 转账
      * @param ID 转账的账号
      * @return
@@ -150,8 +150,10 @@ public class Account {
                 for (Integer key1 : integers){
                     if (key1 == ID){
                         Account account = integerAccountMap.get(ID);
-                        ReadWriteFile.replace(FILENAME,REPACEFILENAME,String.valueOf(account.getBalance()),2,String.valueOf((account.getBalance() + money)));
+                        double deleted = getBalance();
                         setBalance(getBalance() - money);
+                        ReadWriteFile.replace(FILENAME,REPACEFILENAME,String.valueOf(deleted),2,String.valueOf(getBalance()));
+                        ReadWriteFile.replace(REPACEFILENAME,FILENAME,String.valueOf(account.getBalance()),2,String.valueOf((account.getBalance() + money)));
                         return true;
                     }
                 }
