@@ -1,6 +1,7 @@
 package com.atAWT.view;
 
 import javax.swing.*;
+import java.awt.event.MouseAdapter;
 
 /**
  * @author wspstart
@@ -11,5 +12,6 @@ public class Administrators {
     private JButton balancebutton;//查看余额
     private JButton transferbutton;//转账
     private JButton OverdraftButton;//查看透支金额
+
 
 }

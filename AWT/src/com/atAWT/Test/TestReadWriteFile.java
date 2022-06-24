@@ -2,6 +2,8 @@ package com.atAWT.Test;
 
 import com.atAWT.controller.ReadWriteFile;
 import com.atAWT.model.Account;
+import com.atAWT.model.Administrator;
+import org.junit.Test;
 
 import java.util.Map;
 
@@ -10,10 +12,6 @@ import java.util.Map;
  * @create 2022-06-23 10:41
  */
 public class TestReadWriteFile {
-    //假设提交前变基
-    //test注释wsp
-    //test注释zk
-    //测试用注释1
     public static final String Account_FILENAME ="AWT\\src\\CreditAccount.txt";
     public static final String Account1_FILENAME ="AWT\\src\\Account1.txt";
 
@@ -32,6 +30,7 @@ public class TestReadWriteFile {
 //        }
     }
 
+    @Test
     public void test(){
         Account account = new Account();
         boolean transfer = account.transfer(10007, 999);
@@ -40,5 +39,9 @@ public class TestReadWriteFile {
         }else {
             System.out.println("修改失败！！！");
         }
+    }
+    @Test
+    public void test_assetRanking(){
+        new Administrator().assetRanking();
     }
 }

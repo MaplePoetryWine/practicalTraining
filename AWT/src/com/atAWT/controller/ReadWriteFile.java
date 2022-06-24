@@ -197,6 +197,12 @@ public class ReadWriteFile {
         }
         return sum;
     }
+
+    /**
+     * 返回资产
+     * @param fileName
+     * @return
+     */
     public static Map<Integer,Double> getOneBalance(String fileName){
         Map<Integer, Account> map = readTxtFile(fileName);
         TreeMap<Double, Integer> treeMap = new TreeMap<>();
