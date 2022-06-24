@@ -93,4 +93,11 @@ public class AccountService {
         }
         return false;
     }
+
+    /**
+     * @return 返回所有已注册的用户
+     */
+    public Collection<Account> getAllAccount() {
+        return AccountDaoImpl.map.values();
+    }
 }
