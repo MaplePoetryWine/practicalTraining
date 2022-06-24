@@ -3,7 +3,8 @@ package com.atAWT.view;
 import com.atAWT.model.Account;
 
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 /**
  * @author wspstart
@@ -20,23 +21,42 @@ public class revisePersonInfo extends JFrame {
     private JTextField balancetextField2;
     private JLabel error;
     private JPanel revisePersonInfoPanel;
+    private JButton 确定Button;
 
     public revisePersonInfo(Account account){
         pswtextField.setText(account.getPassword());
         nametextField.setText(account.getName());
         teltextField.setText(account.getTel());
         balancetextField.setText(String.valueOf(account.getBalance()));
-        account.setBalance(Double.parseDouble(balancetextField2.getText()));
-        account.setPassword(pswtextField2.getText());
-        account.setName(nametextField2.getText());
+//
         this.add(revisePersonInfoPanel);
         this.setSize(400,600);
         this.setVisible(true);
-        pswtextField2.addFocusListener(new FocusAdapter() {
-            @Override
-            public void focusGained(FocusEvent e) {
-                super.focusGained(e);
 
+        确定Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                    if (! balancetextField2.getText().equals("")){
+                        account.setBalance(Double.parseDouble(balancetextField2.getText()));
+                    }else{
+                        account.setBalance(Double.parseDouble(balancetextField.getText()));
+                    }
+                    if (! pswtextField2.getText().equals("")){
+                        account.setPassword(pswtextField2.getText());
+                    }else {
+                        account.setPassword(pswtextField.getText());
+                    }
+                    if (!nametextField2.getText().equals("")){
+                        account.setName(nametextField2.getText());
+                    }else {
+                        account.setName(nametextField.getText());
+                    }
+                    if (!teltextField2.getText().equals("")){
+                        account.setTel(teltextField2.getText());
+                    }else {
+                        account.setTel(teltextField.getText());
+                    }
             }
         });
     }

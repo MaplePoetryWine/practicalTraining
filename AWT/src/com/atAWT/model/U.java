@@ -3,6 +3,7 @@ package com.atAWT.model;
 import java.io.*;
 import java.util.HashMap;
 
+
 /*
     对象序列化存储工具类
     数据持续层替代方案

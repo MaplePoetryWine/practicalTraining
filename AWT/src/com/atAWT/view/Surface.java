@@ -43,5 +43,12 @@ public class Surface extends JFrame{
                 PersonInfo personInfo = new PersonInfo(account);
             }
         });
+        modifyPersonalInformationButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                revisePersonInfo revisePersonInfo = new revisePersonInfo(account);
+            }
+        });
     }
 }
