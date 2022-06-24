@@ -1,4 +1,4 @@
-package com.atAWT.service;
+package com.atAWT.dao;
 
 import com.atAWT.model.Account;
 

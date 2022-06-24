@@ -1,8 +1,8 @@
-package com.atAWT.service.impl;
+package com.atAWT.dao.impl;
 
 import com.atAWT.model.Account;
 import com.atAWT.model.U;
-import com.atAWT.service.AccountDao;
+import com.atAWT.dao.AccountDao;
 
 public class AccountDaoImpl implements AccountDao {
     @Override

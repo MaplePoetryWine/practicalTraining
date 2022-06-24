@@ -1,9 +1,6 @@
-package com.atAWT.service.impl;
+package com.atAWT.dao.impl;
 
 import com.atAWT.controller.ReadWriteFile;
-import com.atAWT.model.Account;
-import com.atAWT.model.CreditAccount;
-import com.atAWT.model.SavingAccount;
 
 import java.util.Set;
 
