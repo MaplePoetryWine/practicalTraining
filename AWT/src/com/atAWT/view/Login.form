@@ -26,7 +26,7 @@
     <colspec value="left:40dlu:noGrow"/>
     <colspec value="fill:79px:noGrow"/>
     <constraints>
-      <xy x="20" y="20" width="569" height="477"/>
+      <xy x="20" y="20" width="565" height="477"/>
     </constraints>
     <properties>
       <background color="-8355712"/>
@@ -103,16 +103,6 @@
           <font name="Consolas" size="16" style="3"/>
           <foreground color="-16449530"/>
           <text value="账号："/>
-        </properties>
-      </component>
-      <component id="9c53e" class="javax.swing.JButton" binding="找回密码Button" default-binding="true">
-        <constraints>
-          <grid row="7" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-          <forms/>
-        </constraints>
-        <properties>
-          <background color="-8355712"/>
-          <text value="找回密码"/>
         </properties>
       </component>
       <component id="824e" class="javax.swing.JLabel" binding="errorMeg">

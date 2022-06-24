@@ -20,7 +20,7 @@ public class Account {
     private static List<Integer> list = new ArrayList<>();
     private static int total = 0;
 
-    public Account(int ID ,String password) {
+    public Account(int ID, String password) {
         this.ID = ID;
         this.password = password;
     }
@@ -96,7 +96,7 @@ public class Account {
 
     public int getID() {
         ID = list.get(total++);
-        if (total >= 98991 ){
+        if (total >= 98991) {
             System.out.println("error: total数过大，不能继续添加用户了！！！");
             System.exit(0);
         }
@@ -129,9 +129,4 @@ public class Account {
         balance -= money;
         System.out.println("取款成功！");
     }
-
-
-
-
-
 }
