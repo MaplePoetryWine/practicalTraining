@@ -3,7 +3,6 @@ package com.atAWT.service;
 import com.atAWT.dao.AccountDao;
 import com.atAWT.dao.impl.AccountDaoImpl;
 import com.atAWT.model.Account;
-import com.atAWT.model.SavingAccount;
 import com.atAWT.model.U;
 
 import java.io.IOException;
@@ -71,9 +70,27 @@ public class AccountService {
     /**
      * 根据 id 查询对象
      * @param id 要查询的对象的 id
-     * @return
+     * @return 返回一个对应的对象
      */
     public Account selectById(Integer id) {
         return AccountDaoImpl.map.get(id);
+    }
+
+    /**
+     * 存款
+     * @param accountId 要存入的账户 id
+     * @param amount 要存入的金额
+     * @return 返回是否存入成功
+     */
+    public boolean deposit(Integer accountId, double amount) {
+        Account account = selectById(accountId);
+        double balance = account.getBalance();
+        try {
+            return accountDao.deposit(accountId, amount);
+        } catch (IOException e) {
+            account.setBalance(balance);
+            e.printStackTrace();
+        }
+        return false;
     }
 }

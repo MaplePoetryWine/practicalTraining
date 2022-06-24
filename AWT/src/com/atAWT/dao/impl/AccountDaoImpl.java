@@ -5,10 +5,7 @@ import com.atAWT.model.U;
 import com.atAWT.dao.AccountDao;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 
 public class AccountDaoImpl implements AccountDao {
 
@@ -94,5 +91,17 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public boolean checkRePassword(String password, String rePassword) {
         return false;
+    }
+
+    @Override
+    public boolean deposit(Integer accountId, double amount) throws IOException {
+        Account account = map.get(accountId);
+        if (account != null) {
+            account.setBalance(account.getBalance() + amount);
+            updateFile();
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -89,33 +89,4 @@ public class Account implements Serializable {
                 ", balance=" + balance +
                 '}';
     }
-
-
-
-    /**
-     * 存款方式
-     *
-     * @param money
-     */
-    public void deposite(double money) {
-        if (money <= 0) {
-            System.out.println("存款金额不得小于0");
-            return;
-        }
-        balance += money;
-    }
-
-    /**
-     * 取款金额
-     *
-     * @param money
-     */
-    public void withs(double money) {
-        if (balance < money) {
-            String err = "余额不足！";
-            System.out.println("余额不足！");
-        }
-        balance -= money;
-        System.out.println("取款成功！");
-    }
 }
