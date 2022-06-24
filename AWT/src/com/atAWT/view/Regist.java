@@ -4,16 +4,11 @@ import javax.swing.*;
 
 /**
  * @author wspstart
- * @create 2022-06-22 13:53
+ * @create 2022-06-24 15:44
  */
 public class Regist {
-    private JPanel panel1;
-    private JTextArea PersonIDText;
+    private JTextField textField1;
     private JPasswordField passwordField1;
-    private JPasswordField passwordField2;
-    private JButton 立即注册Button;
-    private JTextField UserNameText;
-    private JTextArea EmailText;
-
-
+    private JButton 登录Button;
+    private JButton 注册Button;
 }
