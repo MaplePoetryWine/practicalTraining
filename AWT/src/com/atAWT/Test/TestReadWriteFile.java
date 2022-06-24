@@ -12,6 +12,7 @@ import java.util.Map;
 public class TestReadWriteFile {
     //test注释wsp
     //test注释zk
+    //测试用注释1
     public static final String Account_FILENAME ="AWT\\src\\CreditAccount.txt";
     public static final String Account1_FILENAME ="AWT\\src\\Account1.txt";
 
