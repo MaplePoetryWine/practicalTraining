@@ -20,7 +20,9 @@ public class AccountService {
      */
     public Account login(String accountId, String password) {
         Account account = U.accountMap.get(Integer.parseInt(accountId));
-        if (password.equals(account.getPassword())) {
+        if (account != null
+                && password != null
+                && password.equals(account.getPassword())) {
             return account;
         } else {
             return null;
