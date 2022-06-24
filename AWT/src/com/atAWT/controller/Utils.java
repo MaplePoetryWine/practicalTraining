@@ -1,4 +1,4 @@
-package com.atAWT.model;
+package com.atAWT.controller;
 
 import java.io.Serializable;
 /*
