@@ -22,8 +22,8 @@ public class UserID {
 
     static {
         properties = new Properties();
-        InputStream inputStream = UserID.class.getClassLoader().getResourceAsStream("com/atAWT/userTotal.properties");
-        try {
+
+        try (InputStream inputStream = UserID.class.getClassLoader().getResourceAsStream("com/atAWT/userTotal.properties")) {
             properties.load(inputStream);
             userTotal = Integer.parseInt(properties.getProperty("userTotal"));
         } catch (IOException e) {
