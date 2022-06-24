@@ -27,5 +27,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="jgoodies-common-1.6.0" level="project" />
+    <orderEntry type="library" name="jgoodies-forms-1.7.2" level="project" />
   </component>
 </module>
