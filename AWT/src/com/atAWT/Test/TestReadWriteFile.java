@@ -2,7 +2,6 @@ package com.atAWT.Test;
 
 import com.atAWT.controller.ReadWriteFile;
 import com.atAWT.model.Account;
-import org.junit.Test;
 
 import java.util.Map;
 
@@ -12,6 +11,7 @@ import java.util.Map;
  */
 public class TestReadWriteFile {
     //test注释wsp
+    //test注释zk
     public static final String Account_FILENAME ="AWT\\src\\CreditAccount.txt";
     public static final String Account1_FILENAME ="AWT\\src\\Account1.txt";
 
@@ -30,7 +30,6 @@ public class TestReadWriteFile {
 //        }
     }
 
-    @Test
     public void test(){
         Account account = new Account();
         boolean transfer = account.transfer(10007, 999);
