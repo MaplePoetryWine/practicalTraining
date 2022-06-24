@@ -106,8 +106,10 @@ public class AccountService {
      * @param amount 要取款的 金额
      * @return 返回是否成功
      */
-    public boolean withdrawMoney(Integer accountId, double amount) {
+    public boolean withdrawMoney(Integer accountId, String password, double amount) {
         Account account = selectById(accountId);
+        if (account == null) return false;
+        if (! password.equals(account.getPassword())) return false;
         double balance = account.getBalance();
         if (balance < amount) {
             return false;
