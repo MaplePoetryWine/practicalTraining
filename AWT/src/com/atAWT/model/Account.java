@@ -14,7 +14,7 @@ public class Account {
     private String name;
     private String personID;//身份证
     private String tel;//联系电话
-    private double balance;//余额
+    private double balance = 0.0;//余额
     private static List<Integer> list = new ArrayList<>();
     private static int total = 0;
 
@@ -23,12 +23,11 @@ public class Account {
         this.password = password;
     }
 
-    public Account(String password, String name, String personID, String tel, double balance) {
+    public Account(String password, String name, String personID, String tel) {
         this.password = password;
         this.name = name;
         this.personID = personID;
         this.tel = tel;
-        this.balance = balance;
     }
 
     public Account() {

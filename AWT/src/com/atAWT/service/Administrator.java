@@ -19,7 +19,7 @@ public class Administrator extends Account  {
     private final static String SAVINGACCOUNT = "src\\SavingAccount.txt";
 
     public Administrator(String password, String name, String personID, String tel, double balance) {
-        super(password, name, personID, tel, balance);
+        super(password, name, personID, tel);
     }
 
 

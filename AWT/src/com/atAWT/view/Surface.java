@@ -1,6 +1,10 @@
 package com.atAWT.view;
 
 import javax.swing.*;
+import javax.swing.plaf.FontUIResource;
+import javax.swing.text.StyleContext;
+import java.awt.*;
+import java.util.Locale;
 
 /**
  * @author wspstart
@@ -14,4 +18,5 @@ public class Surface {
     private JButton viewPersonalInformationButton;
     private JButton modifyPersonalInformationButton;
     private JButton checkBalanceButton;
+
 }
