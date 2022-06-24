@@ -26,9 +26,6 @@ public class revisePersonInfo extends JFrame {
         nametextField.setText(account.getName());
         teltextField.setText(account.getTel());
         balancetextField.setText(String.valueOf(account.getBalance()));
-        account.setBalance(Double.parseDouble(balancetextField2.getText()));
-        account.setPassword(pswtextField2.getText());
-        account.setName(nametextField2.getText());
         this.add(revisePersonInfoPanel);
         this.setSize(400,600);
         this.setVisible(true);
@@ -36,6 +33,16 @@ public class revisePersonInfo extends JFrame {
             @Override
             public void focusGained(FocusEvent e) {
                 super.focusGained(e);
+                try {
+                    account.setBalance(Double.parseDouble(balancetextField2.getText()));
+                    account.setPassword(pswtextField2.getText());
+                    account.setName(nametextField2.getText());
+                    account.setTel(teltextField2.getText());
+                }catch (Exception ex){
+                    System.out.println("存在空文本框");
+                    ex.printStackTrace();
+                }
+
 
             }
         });
