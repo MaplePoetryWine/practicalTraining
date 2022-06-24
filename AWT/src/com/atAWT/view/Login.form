@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.Regist">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.Login">
   <grid id="27dc6" layout-manager="GridBagLayout">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -47,7 +47,7 @@
         </constraints>
         <properties/>
       </component>
-      <component id="2abcf" class="javax.swing.JButton" binding="登录Button" default-binding="true">
+      <component id="2abcf" class="javax.swing.JButton" binding="loginbutton">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
@@ -58,7 +58,7 @@
           <text value="登录"/>
         </properties>
       </component>
-      <component id="f8a73" class="javax.swing.JButton" binding="注册Button" default-binding="true">
+      <component id="f8a73" class="javax.swing.JButton" binding="registerbutton">
         <constraints>
           <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
