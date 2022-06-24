@@ -31,15 +31,15 @@ public class TestReadWriteFile {
     }
     @Test
     public void test(){
-        Account account = new Account();
-        boolean transfer = account.transfer(10007, 999);
-        if (transfer){
-            System.out.println("修改成功！！！");
-        }else {
-            System.out.println("修改失败！！！");
-        }
+//        Account account = new Account();
+//        boolean transfer = account.transfer(10007, 999);
+//        if (transfer){
+//            System.out.println("修改成功！！！");
+//        }else {
+//            System.out.println("修改失败！！！");
+//        }
     }
-    public void test_assetRanking(){
-        new Administrator().assetRanking();
-    }
+//    public void test_assetRanking(){
+//        new Administrator().assetRanking();
+//    }
 }

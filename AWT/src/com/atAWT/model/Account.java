@@ -1,9 +1,7 @@
 package com.atAWT.model;
 
 import com.atAWT.controller.ReadWriteFile;
-import com.sun.xml.internal.bind.v2.model.core.ID;
 
-import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -12,7 +10,7 @@ import java.util.*;
  * @author wspstart
  * @create 2022-06-21 8:50
  */
-public class Account implements Serializable {
+public class Account {
     public int ID = 0;//账号
     private String password;//密码
     private String name;
@@ -132,35 +130,8 @@ public class Account implements Serializable {
         System.out.println("取款成功！");
     }
 
-    String FILENAME = "src\\LoanAccount.txt";
-    String REPACEFILENAME ="src\\LoanAccountcopy.txt";
 
 
-    /**
-     * 由于是替换余额的，本账号的余额要减少，被转号要增加，先写一个文件，存的是本号减少的，然后再 读取这个文件，将转账号的余额增加，所以原文件任为有效文件
-     * 转账
-     * @param ID 转账的账号
-     * @return
-     */
-    public  boolean transfer(int ID,double money){
-        Map<Integer, String> map = ReadWriteFile.Login_AccountFile(FILENAME);
-        Set<Integer> keySet = map.keySet();
-        for (Integer key: keySet ){
-            if (key == ID){
-                Map<Integer, Account> integerAccountMap = ReadWriteFile.readTxtFile(FILENAME);
-                Set<Integer> integers = integerAccountMap.keySet();
-                for (Integer key1 : integers){
-                    if (key1 == ID){
-                        Account account = integerAccountMap.get(ID);
-                        double deleted = getBalance();
-                        setBalance(getBalance() - money);
-                        ReadWriteFile.replace(FILENAME,REPACEFILENAME,String.valueOf(deleted),2,String.valueOf(getBalance()));
-                        ReadWriteFile.replace(REPACEFILENAME,FILENAME,String.valueOf(account.getBalance()),2,String.valueOf((account.getBalance() + money)));
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
+
+
 }

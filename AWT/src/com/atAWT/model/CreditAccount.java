@@ -10,13 +10,6 @@ import java.io.Serializable;
 public class CreditAccount extends Account implements Serializable {
     private double ceiling;//信用额度(可设置透支金额)
 
-    public CreditAccount() {
-    }
-
-    public CreditAccount(double ceiling) {
-        this.ceiling = ceiling;
-    }
-
     public CreditAccount( String password,  String name, String personID, String tel, double balance) {
         super( password, name, personID, tel, balance);
     }

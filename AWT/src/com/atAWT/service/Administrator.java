@@ -13,11 +13,16 @@ import java.util.Set;
  * @author wspstart
  * @create 2022-06-21 9:09
  */
-    @SuppressWarnings("all")
-    public class Administrator extends Account implements Serializable {
-        private final static String CREDITACCOUNTFILE = "src\\CreditAccount.txt";
-        private final static String LOANACCOUNTFILE = "src\\LoanAccount.txt";
-        private final static String SAVINGACCOUNT = "src\\SavingAccount.txt";
+@SuppressWarnings("all")
+public class Administrator extends Account  {
+    private final static String CREDITACCOUNTFILE = "src\\CreditAccount.txt";
+    private final static String LOANACCOUNTFILE = "src\\LoanAccount.txt";
+    private final static String SAVINGACCOUNT = "src\\SavingAccount.txt";
+
+    public Administrator(String password, String name, String personID, String tel, double balance) {
+        super(password, name, personID, tel, balance);
+    }
+
 
     /**
      * 管理员查看所有的用户信息
@@ -77,9 +82,9 @@ import java.util.Set;
         String str = "ID \t\t\tBALANCE";
         System.out.println(str);
         Set<Integer> ID = creditAccount.keySet();
-        for (Integer id : ID){
+        for (Integer id : ID) {
             Double aDouble = creditAccount.get(id);
-            String asset = id  + "\t\t"+ String.valueOf(aDouble);
+            String asset = id + "\t\t" + String.valueOf(aDouble);
             System.out.println(asset);
         }
         //获取到loanAccount.txt
@@ -88,9 +93,9 @@ import java.util.Set;
         System.out.println(type1);
         System.out.println(str);
         Set<Integer> loanID = loanAccount.keySet();
-        for (Integer id : loanID){
+        for (Integer id : loanID) {
             Double aDouble = loanAccount.get(id);
-            String asset = id  + "\t\t"+ String.valueOf(aDouble);
+            String asset = id + "\t\t" + String.valueOf(aDouble);
             System.out.println(asset);
         }
         //获取到SavingAccount.txt
@@ -99,9 +104,9 @@ import java.util.Set;
         System.out.println(type3);
         System.out.println(str);
         Set<Integer> savingID = savingAccount.keySet();
-        for (Integer id : savingID){
+        for (Integer id : savingID) {
             Double aDouble = savingAccount.get(id);
-            String asset = id  + "\t\t"+ String.valueOf(aDouble);
+            String asset = id + "\t\t" + String.valueOf(aDouble);
             System.out.println(asset);
         }
     }
