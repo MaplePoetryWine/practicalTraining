@@ -14,6 +14,7 @@ import java.util.*;
 @SuppressWarnings("all")
 public class ReadWriteFile {
     //test注释
+    //test注释2
     /**
      * 读取txt文件中的全部个人信息读取到内存上然后添加到Map中
      * 用Hashtable的原因是不能存放null值
