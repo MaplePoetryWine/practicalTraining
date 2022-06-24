@@ -1,11 +1,13 @@
 package com.atAWT.model;
 
+import java.io.Serializable;
+
 /**
  * 子账户  信用账户
  * @author wspstart
  * @create 2022-06-21 9:08
  */
-public class CreditAccount extends Account{
+public class CreditAccount extends Account implements Serializable {
     private double ceiling;//信用额度(可设置透支金额)
 
     public CreditAccount() {
