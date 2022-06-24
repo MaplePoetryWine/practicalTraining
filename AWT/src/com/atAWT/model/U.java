@@ -1,5 +1,7 @@
 package com.atAWT.model;
 
+import com.atAWT.service.Administrator;
+
 import java.io.*;
 import java.util.HashMap;
 
