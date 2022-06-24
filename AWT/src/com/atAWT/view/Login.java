@@ -33,8 +33,10 @@ public class Login extends JFrame {
                 Account isTrue = accountS.login(textField1.getText(), passwordField1.getText());
                 if (isTrue == null){
                     prompt.setText("登录失败！！！");
-                }else
+                }else {
                     prompt.setText("登录成功！！！");
+                    Surface surface = new Surface();
+                }
             }
         });
         this.setSize(500, 400);

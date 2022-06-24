@@ -13,7 +13,7 @@ import java.util.*;
  */
 public class Account implements Serializable {
     private static final long serialVersionUID = 42L;
-    public Integer ID = UserID.getID();//账号
+    private Integer ID = UserID.getID();//账号
     private String password;//密码
     private String name;
     private String personID;//身份证
