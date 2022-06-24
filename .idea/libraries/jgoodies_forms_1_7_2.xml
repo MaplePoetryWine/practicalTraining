@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jgoodies-forms-1.7.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/AWT/lib/jgoodies-forms-1.7.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
