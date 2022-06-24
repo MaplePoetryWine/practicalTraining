@@ -3,6 +3,7 @@ package com.atAWT.service;
 import com.atAWT.controller.ReadWriteFile;
 import com.atAWT.model.Account;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.Set;
 
@@ -12,11 +13,11 @@ import java.util.Set;
  * @author wspstart
  * @create 2022-06-21 9:09
  */
-@SuppressWarnings("all")
-public class Administrator extends Account {
-    private final static String CREDITACCOUNTFILE = "src\\CreditAccount.txt";
-    private final static String LOANACCOUNTFILE = "src\\LoanAccount.txt";
-    private final static String SAVINGACCOUNT = "src\\SavingAccount.txt";
+    @SuppressWarnings("all")
+    public class Administrator extends Account implements Serializable {
+        private final static String CREDITACCOUNTFILE = "src\\CreditAccount.txt";
+        private final static String LOANACCOUNTFILE = "src\\LoanAccount.txt";
+        private final static String SAVINGACCOUNT = "src\\SavingAccount.txt";
 
     /**
      * 管理员查看所有的用户信息

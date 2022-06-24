@@ -3,6 +3,7 @@ package com.atAWT.model;
 import com.atAWT.controller.ReadWriteFile;
 import com.sun.xml.internal.bind.v2.model.core.ID;
 
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -11,7 +12,7 @@ import java.util.*;
  * @author wspstart
  * @create 2022-06-21 8:50
  */
-public class Account {
+public class Account implements Serializable {
     public int ID = 0;//账号
     private String password;//密码
     private String name;
