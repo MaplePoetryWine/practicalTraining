@@ -1,7 +1,5 @@
 package com.atAWT.model;
 
-import com.atAWT.controller.ReadWriteFile;
-
 import java.util.*;
 
 /**

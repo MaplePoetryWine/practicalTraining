@@ -1,6 +1,6 @@
 package com.atAWT.dao.impl;
 
-import com.atAWT.controller.ReadWriteFile;
+import com.atAWT.utils.ReadWriteFile;
 
 import java.util.Set;
 

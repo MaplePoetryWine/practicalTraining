@@ -1,6 +1,6 @@
 package com.atAWT.service;
 
-import com.atAWT.controller.ReadWriteFile;
+import com.atAWT.utils.ReadWriteFile;
 import com.atAWT.model.Account;
 import com.atAWT.model.SavingAccount;
 

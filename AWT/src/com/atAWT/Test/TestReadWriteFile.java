@@ -1,11 +1,8 @@
 package com.atAWT.Test;
 
-import com.atAWT.controller.ReadWriteFile;
+import com.atAWT.utils.ReadWriteFile;
 import com.atAWT.model.Account;
-import com.atAWT.service.Administrator;
 import org.junit.Test;
-
-import java.util.Map;
 
 /**
  * @author wspstart

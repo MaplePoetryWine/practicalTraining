@@ -1,9 +1,6 @@
-package com.atAWT.controller;
+package com.atAWT.Test;
 
 import com.atAWT.model.Account;
-import com.atAWT.model.U;
-import com.atAWT.utils.WindowUtils;
-import com.atAWT.view.Login_selection;
 import org.junit.Test;
 
 public class Main {
@@ -11,7 +8,7 @@ public class Main {
 
     public static void main(String[] args) {
     //test01
-        WindowUtils.openJFrame(new Login_selection());
+
     }
     @Test
     public static  void add(){
