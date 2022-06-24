@@ -104,4 +104,10 @@ public class AccountDaoImpl implements AccountDao {
             return false;
         }
     }
+
+    @Override
+    public boolean withdrawMoney(Account account, double amount) {
+        account.setBalance(account.getBalance() - amount);
+        return true;
+    }
 }

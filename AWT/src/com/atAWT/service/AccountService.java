@@ -101,6 +101,22 @@ public class AccountService {
     }
 
     /**
+     * 取款
+     * @param accountId 要取款的 id
+     * @param amount 要取款的 金额
+     * @return 返回是否成功
+     */
+    public boolean withdrawMoney(Integer accountId, double amount) {
+        Account account = selectById(accountId);
+        double balance = account.getBalance();
+        if (balance < amount) {
+            return false;
+        } else {
+            return accountDao.withdrawMoney(account, amount);
+        }
+    }
+
+    /**
      * @return 返回所有已注册的用户
      */
     public Collection<Account> getAllAccount() {

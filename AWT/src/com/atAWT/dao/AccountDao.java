@@ -11,4 +11,6 @@ public interface AccountDao {
     public boolean checkRePassword(String password,String rePassword);
 
     boolean deposit(Integer accountId, double amount) throws IOException;
+
+    boolean withdrawMoney(Account accountId, double amount);
 }
