@@ -1,7 +1,6 @@
 package com.atAWT.utils;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -23,7 +22,7 @@ public class UserID {
     static {
         properties = new Properties();
 
-        try (InputStream inputStream = UserID.class.getClassLoader().getResourceAsStream("com/atAWT/userTotal.properties")) {
+        try (InputStream inputStream = UserID.class.getClassLoader().getResourceAsStream("com\\atAWT\\userTotal.properties")) {
             properties.load(inputStream);
             userTotal = Integer.parseInt(properties.getProperty("userTotal"));
         } catch (IOException e) {
@@ -32,8 +31,18 @@ public class UserID {
     }
 
     public static int getID() {
+        userTotal = Integer.parseInt(properties.getProperty("userTotal"));
         int id = userTotal + 1;
-        properties.setProperty("userTotal", String.valueOf(id));
+        try {
+            properties.setProperty("userTotal", String.valueOf(id));
+
+            properties.store(new FileOutputStream(new File("AWT\\src\\com\\atAWT\\userTotal.properties")), "newUserID");
+        } catch (FileNotFoundException e) {
+//            throw new RuntimeException("找不到 userTotal.properties");
+            e.printStackTrace();
+        } catch (IOException e) {
+            throw new RuntimeException("更新 userID 失败");
+        }
         return id;
     }
 }

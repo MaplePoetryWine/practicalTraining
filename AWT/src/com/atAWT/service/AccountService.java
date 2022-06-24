@@ -1,13 +1,13 @@
 package com.atAWT.service;
 
+import com.atAWT.dao.AccountDao;
+import com.atAWT.dao.impl.AccountDaoImpl;
 import com.atAWT.model.Account;
 import com.atAWT.model.SavingAccount;
 import com.atAWT.model.U;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * @author: Ding
@@ -17,6 +17,8 @@ import java.util.Set;
  */
 
 public class AccountService {
+
+    private AccountDao accountDao = new AccountDaoImpl();
 
     /**
      * 处理登录请求，返回登录用户的对象，若为 null 表示该用户不存在
@@ -41,22 +43,38 @@ public class AccountService {
      * @return
      */
     public Account register(Account account) {
-        HashMap<Integer, SavingAccount> savingMap = U.savingMap;
-        Collection<SavingAccount> savingAccounts = savingMap.values();
+//        HashMap<Integer, Account> accountMap = U.accountMap;
+//        Collection<Account> accounts = accountMap.values();
+
+        List<Account> accounts = AccountDaoImpl.list;
         Set<String> set = new HashSet<>();
-        for (SavingAccount savingAccount : savingAccounts) {
-            set.add(savingAccount.getPersonID());
+        for (Account otherAccount : accounts) {
+            set.add(otherAccount.getPersonID());
         }
 
         if (! set.add(account.getPersonID())) {
             return null;
         }
 
-        if (U.addCount(account)) {
-            return account;
-        } else {
-            return null;
+        try {
+            if (/*U.addCount(account)*/ accountDao.register(account)) {
+                return account;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+        return null;
+    }
 
+    /**
+     * 根据 id 查询对象
+     * @param id
+     * @return
+     */
+    @Deprecated
+    public Account selectById(Integer id) {
+        return U.accountMap.get(id);
     }
 }
