@@ -28,22 +28,14 @@ public class AccountService {
             return null;
         }
     }
+
     /**
      * 处理注册请求
      * @param account 返回注册用户的对象，若为 null 则注册失败
      * @return
      */
     public Account register(Account account) {
-        boolean flag = true;
-        String personId = account.getPersonID();
-        for (Account account1 : U.accountMap.values()) {
-            if (account1.getID().equals(personId)){
-                flag = false;
-                break;
-            }
-        }
-        if (flag) {
-            U.addCount(account);
+        if (U.addCount(account)) {
             return account;
         } else {
             return null;
