@@ -1,4 +1,4 @@
-package com.atAWT.service;
+package com.atAWT.service.impl;
 
 import com.atAWT.controller.ReadWriteFile;
 import com.atAWT.model.Account;
@@ -30,10 +30,11 @@ public class Bank {
             case CREDITACCOUNT:
 
         }
+        return false;
     }
     public boolean registCreditAccount(){
         Set<String> creditAccount = ReadWriteFile.Regist_AccountFile(CREDITACCOUNTFILE);//获取到所有的账户身份证信息
-
+        return false;
     }
 
 
@@ -64,6 +65,6 @@ public class Bank {
      * @return
      */
     public boolean deposit(double money){
-
+        return false;
     }
 }

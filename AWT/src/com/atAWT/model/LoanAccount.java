@@ -1,11 +1,13 @@
 package com.atAWT.model;
 
+import java.io.Serializable;
+
 /**
  * 贷款账户
  * @author wspstart
  * @create 2022-06-24 10:42
  */
-public class LoanAccount extends Account {
+public class LoanAccount extends Account implements Serializable {
     private double loanAmount;
 
     public LoanAccount(String password, String name, String personID, String tel, double balance, double loanAmount) {

@@ -29,7 +29,6 @@ public class TestReadWriteFile {
 //            System.out.println(account1.getID());
 //        }
     }
-
     @Test
     public void test(){
         Account account = new Account();
@@ -40,7 +39,6 @@ public class TestReadWriteFile {
             System.out.println("修改失败！！！");
         }
     }
-    @Test
     public void test_assetRanking(){
         new Administrator().assetRanking();
     }

@@ -22,8 +22,9 @@ public class Account implements Serializable {
     private static List<Integer> list = new ArrayList<>();
     private static int total = 0;
 
-    public Account() {
-
+    public Account(int ID ,String password) {
+        this.ID = ID;
+        this.password = password;
     }
 
     public Account(String password, String name, String personID, String tel, double balance) {
