@@ -22,14 +22,19 @@ public class Login extends JFrame {
     private JButton loginbutton;
     private JButton registerbutton;
     private JPanel loginPanel;
-    private  AccountService account  = new AccountService();
+    private JLabel prompt;
+    private  AccountService accountS  = new AccountService();
     public Login() {
         this.add(loginPanel);
         loginbutton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                account.login(textField1.getText(), passwordField1.getText());
+                Account isTrue = accountS.login(textField1.getText(), passwordField1.getText());
+                if (isTrue == null){
+                    prompt.setText("登录失败！！！");
+                }else
+                    prompt.setText("登录成功！！！");
             }
         });
         this.setSize(500, 400);
@@ -39,8 +44,7 @@ public class Login extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-
-                account.register()
+                Regist regist = new Regist();
             }
         });
     }

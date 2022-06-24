@@ -8,7 +8,8 @@ import java.io.Serializable;
  * @create 2022-06-21 17:43
  */
 public class SavingAccount extends  Account implements Serializable {
-    private final static  long serialVersionUID = 4223114344L;
+
+    private static final long serialVersionUID = 42L;
     public SavingAccount(String password, String name, String personID, String tel) {
         super(password, name, personID, tel);
     }

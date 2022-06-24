@@ -19,8 +19,8 @@ public class TestReadWriteFile {
 //        System.out.println(ReadWriteFile.Login_AccountFile(Account_FILENAME));
 //        System.out.println(ReadWriteFile.Regist_AccountFile(Account_FILENAME));
 //        ReadWriteFile.replace(Account_FILENAME,Account1_FILENAME,"320721200111153645","9999999999991");
-        Account account = new Account("1234567", "王善鹏", "320721200222130819", "lyggwsp@163.com", 90909090);
-        ReadWriteFile.Regist_writeFile(Account_FILENAME,account);
+//        Account account = new Account("1234567", "王善鹏", "320721200222130819", "lyggwsp@163.com", 90909090);
+//        ReadWriteFile.Regist_writeFile(Account_FILENAME,account);
 //        Account account1 = new Account();
 //        while (true){
 //            System.out.println(account1.getID());

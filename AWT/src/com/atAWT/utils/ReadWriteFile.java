@@ -35,7 +35,7 @@ public class ReadWriteFile {
             while ((data = br.readLine()) != null) {
                 String[] split = data.split("=");
                 content.put(Integer.valueOf(split[0]), new Account(split[1], split[2], split[3],
-                        split[4], Double.parseDouble(split[5])));
+                        split[4]));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);

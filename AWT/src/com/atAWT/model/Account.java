@@ -1,5 +1,8 @@
 package com.atAWT.model;
 
+import com.atAWT.utils.UserID;
+
+import java.io.Serializable;
 import java.util.*;
 
 /**
@@ -8,15 +11,15 @@ import java.util.*;
  * @author wspstart
  * @create 2022-06-21 8:50
  */
-public class Account {
-    public int ID = 0;//账号
+public class Account implements Serializable {
+    private static final long serialVersionUID = 42L;
+    public Integer ID = UserID.getID();//账号
     private String password;//密码
     private String name;
     private String personID;//身份证
     private String tel;//联系电话
     private double balance = 0.0;//余额
-    private static List<Integer> list = new ArrayList<>();
-    private static int total = 0;
+
 
     public Account(int ID, String password) {
         this.ID = ID;
@@ -32,7 +35,9 @@ public class Account {
 
     public Account() {
     }
-
+    public Integer getID() {
+        return ID;
+    }
     public String getPassword() {
         return password;
     }
@@ -85,22 +90,7 @@ public class Account {
                 '}';
     }
 
-    /**
-     *
-     */
-    static {
-        for (int i = 10007; i <= 999999; i++)
-            list.add(i);
-    }
 
-    public int getID() {
-        ID = list.get(total++);
-        if (total >= 98991) {
-            System.out.println("error: total数过大，不能继续添加用户了！！！");
-            System.exit(0);
-        }
-        return ID;
-    }
 
     /**
      * 存款方式

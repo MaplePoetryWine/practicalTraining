@@ -10,7 +10,9 @@ import java.io.Serializable;
  * @create 2022-06-21 9:08
  */
 public class CreditAccount extends Account implements Serializable {
-    private final static  long serialVersionUID = 422314L;
+
+    private static final long serialVersionUID = 42L;
+
     private double ceiling;//信用额度(可设置透支金额)
 
     public CreditAccount( String password,  String name, String personID, String tel) {
