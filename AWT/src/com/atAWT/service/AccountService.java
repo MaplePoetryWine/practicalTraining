@@ -88,8 +88,9 @@ public class AccountService {
      * @param amount 要存入的金额
      * @return 返回是否存入成功
      */
-    public boolean deposit(Integer accountId, double amount) {
+    public boolean deposit(Integer accountId, String password, double amount) {
         Account account = selectById(accountId);
+        if (! password.equals(account.getPassword())) return false;
         double balance = account.getBalance();
         try {
             return accountDao.deposit(accountId, amount);
