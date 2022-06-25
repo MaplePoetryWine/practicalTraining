@@ -167,7 +167,7 @@ public class AccountService {
             }
             return "error: 系统异常！转账失败";
         } finally {
-            U.writeAccount();
+//            U.writeAccount();
             lock.unlock();
         }
     }

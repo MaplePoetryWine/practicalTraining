@@ -26,5 +26,12 @@ public class AdministratorView extends JFrame {
                 Info info = new Info(administrator.getAllAccount());
             }
         });
+        balanceButton.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                new AllBalance();
+            }
+        });
     }
 }

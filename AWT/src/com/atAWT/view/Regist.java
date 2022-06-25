@@ -40,7 +40,7 @@ public class Regist extends JFrame{
                     error.setText("注册失败!请检查身份证号是否输入正确。");
                 } else {
                     if (personIderrorLabel.getText().equals("X")){
-                        error.setText("注册失败!");
+                        error.setText("注册失败!身份证号输入错误！");
                     }else{
                         error.setText(" 您的账号为：" + account.getID().toString());
                     }
