@@ -107,6 +107,7 @@ public class Surface extends JFrame{
                 super.mouseClicked(e);
                 //查看贷款余额
 //                loanAccount = loanAccountService.openLoanAccount(account.getID());
+                loanAccount = loanAccountService.selectLoanAccountById(account.getID());
                 new checkLoanBalance(loanAccount);
 //                if (loanAccount == null){
 //                    new checkLoanBalance(loanAccount);

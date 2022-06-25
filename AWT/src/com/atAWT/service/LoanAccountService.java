@@ -4,6 +4,8 @@ import com.atAWT.model.Account;
 import com.atAWT.model.LoanAccount;
 import com.atAWT.model.U;
 
+import java.util.Collection;
+
 /**
  * @author: Ding
  * @date: 2022/6/25
@@ -60,9 +62,10 @@ public class LoanAccountService {
 
         boolean deposit = accountService.deposit(accountId, account.getPassword(), amount);
         if (deposit) {
-            account.setLoanAmount(amount);
-            U.load();
+            account.setLoanAmount(account.getLoanAmount() + amount);
+            U.accountMap.put(accountId, account);
             U.write();
+            U.load();
             return true;
         }
 
@@ -103,5 +106,20 @@ public class LoanAccountService {
     public double selectLoanAmount(Integer accountId) {
         LoanAccount loanAccount = selectLoanAccountById(accountId);
         return loanAccount.getLoanAmount();
+    }
+
+    /**
+     *
+     * @return 返回所有贷款用户的贷款总额
+     */
+    public double selectAllLoanAmount() {
+        Collection<Account> accounts = U.accountMap.values();
+        double sum = 0;
+        for (Account account : accounts) {
+            if (account.getClass() == LoanAccount.class) {
+                sum += ((LoanAccount) account).getLoanAmount();
+            }
+        }
+        return sum;
     }
 }
