@@ -31,6 +31,7 @@ public class AccountService {
      */
     public Account login(String accountId, String password) {
         Account account = U.accountMap.get(Integer.parseInt(accountId));
+        if (account == null) return null;
         account.setPassword(password);
 
         if (accountDao.login(account)) {
@@ -78,6 +79,7 @@ public class AccountService {
      * @return 返回一个对应的对象
      */
     public Account selectById(Integer id) {
+        U.load();
         return U.accountMap.get(id);
     }
 
