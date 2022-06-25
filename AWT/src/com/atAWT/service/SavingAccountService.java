@@ -92,7 +92,7 @@ public class SavingAccountService {
             }
             return "error: 系统异常！转账失败";
         } finally {
-            U.writeAccount();
+            U.write();
             lock.unlock();
         }
     }
@@ -110,7 +110,7 @@ public class SavingAccountService {
 
         } finally {
             lock.unlock();
-            U.writeAccount();
+            U.write();
         }
 
     }
@@ -145,7 +145,7 @@ public class SavingAccountService {
             return "系统异常，取款失败";
         } finally {
             lock.unlock();
-            U.writeAccount();
+            U.write();
         }
 
     }

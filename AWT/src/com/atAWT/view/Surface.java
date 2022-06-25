@@ -19,7 +19,6 @@ public class Surface extends JFrame{
     private JButton modifyPersonalInformationButton;
     private JButton checkBalanceButton;
     private JPanel surface;
-    private JButton sqButton;
 
 
     public Surface(AccountService accountService,Account account) {

@@ -28,6 +28,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <editable value="false"/>
           <font name="Consolas" size="16" style="2"/>
         </properties>
       </component>
@@ -49,6 +50,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <editable value="false"/>
           <font name="Consolas" size="16" style="2"/>
         </properties>
       </component>

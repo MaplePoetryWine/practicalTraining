@@ -47,6 +47,7 @@ public class Regist extends JFrame {
                         error.setText("注册失败!身份证号输入错误！");
                     } else {
                         AccountID accountID = new AccountID(account);
+                        toClose();
                     }
                 }
             }
@@ -68,5 +69,8 @@ public class Regist extends JFrame {
                 }
             }
         });
+    }
+    private void toClose() {
+        this.setVisible(false);
     }
 }

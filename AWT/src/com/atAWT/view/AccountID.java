@@ -23,6 +23,7 @@ public class AccountID extends JFrame{
     }
 
     public AccountID(Account account) {
+        this();
         IDField1.setText(account.getID().toString());
         OKButton.addMouseListener(new MouseAdapter() {
             @Override
