@@ -84,9 +84,9 @@ public class Surface extends JFrame{
                 super.mouseClicked(e);
                 LoanAccount loanAccount = loanAccountService.openLoanAccount(account.getID());
                 if (loanAccount == null){
-                    loanEligibility loanEligibility = new loanEligibility();
+                    loan loan = new loan(loanAccountService.selectLoanAccountById(account.getID()));
                 }else {
-                    loan loan = new loan(loanAccount);
+                    loanEligibility loanEligibility = new loanEligibility();
                 }
 
             }

@@ -91,4 +91,15 @@ public class LoanAccountService {
         }
         return false;
     }
+
+
+    /**
+     * 查询用户贷款金额
+     * @param accountId 要查询的用户 id
+     * @return 返回该用户的剩余未还贷款
+     */
+    public double selectLoanAmount(Integer accountId) {
+        LoanAccount loanAccount = selectLoanAccountById(accountId);
+        return loanAccount.getLoanAmount();
+    }
 }
