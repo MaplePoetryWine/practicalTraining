@@ -13,12 +13,12 @@ import java.util.*;
  */
 public class Account implements Comparator<Double>, Serializable {
     private static final long serialVersionUID = 42L;
-    private Integer ID = UserID.getID();//账号
-    private String password;//密码
-    private String name;
-    private String personID;//身份证
-    private String tel;//联系电话
-    private double balance = 0.0;//余额
+    protected Integer ID = UserID.getID();//账号
+    protected String password;//密码
+    protected String name;
+    protected String personID;//身份证
+    protected String tel;//联系电话
+    protected double balance = 0.0;//余额
 
 
     public Account(int ID, String password) {
