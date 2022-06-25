@@ -65,7 +65,7 @@ public class U implements Serializable {
                 }
             } catch (Exception e) {
                 System.out.println("不想纠错了,在U里面的read方法");
-                write();
+//                write();
                 throw new RuntimeException(e);
             } finally {
                 try {

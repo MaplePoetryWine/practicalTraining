@@ -19,7 +19,7 @@ public class AccountID extends JFrame{
     public AccountID() {
         this.add(AccountIDPanle);
         this.setVisible(true);
-        this.setSize(500,400);
+        this.setSize(2560,1600);
     }
 
     public AccountID(Account account) {

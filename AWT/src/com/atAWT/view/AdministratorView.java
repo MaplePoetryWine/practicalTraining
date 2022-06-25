@@ -17,7 +17,7 @@ public class AdministratorView extends JFrame {
     private  AdministratorService administrator = new AdministratorService();
     public AdministratorView() {
         this.add(AdministratorPanel);
-        this.setSize(400,350);
+        this.setSize(2560,1600);
         this.setVisible(true);
         xxButton.addMouseListener(new MouseAdapter() {
             @Override

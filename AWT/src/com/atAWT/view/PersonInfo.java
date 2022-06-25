@@ -28,7 +28,7 @@ public class PersonInfo extends JFrame{
         teltextField5.setText(account.getTel());
         balancetextField6.setText(String.valueOf(account.getBalance()));
         this.add(inofPanel);
-        this.setSize(400,600);
+        this.setSize(2560,1600);
         this.setVisible(true);
         OkButton.addMouseListener(new MouseAdapter() {
             @Override

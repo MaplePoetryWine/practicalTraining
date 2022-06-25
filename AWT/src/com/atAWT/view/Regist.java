@@ -52,8 +52,7 @@ public class Regist extends JFrame {
                 }
             }
         });
-        this.setSize(500, 600);
-        this.setLocation(400, 500);
+        this.setSize(2560, 1600);
         this.setVisible(true);
         PersonIDField.addMouseListener(new MouseAdapter() {
             @Override

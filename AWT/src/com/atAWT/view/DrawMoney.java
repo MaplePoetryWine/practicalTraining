@@ -21,7 +21,7 @@ public class DrawMoney extends JFrame {
 
     public DrawMoney(AccountService accountService, Account account) {
         this.add(drawMoneyPanel);
-        this.setSize(300, 400);
+        this.setSize(2560, 1600);
         this.setVisible(true);
         OKButton.addMouseListener(new MouseAdapter() {
             @Override

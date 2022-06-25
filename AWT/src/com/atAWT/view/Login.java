@@ -42,8 +42,7 @@ public class Login extends JFrame {
                 }
             }
         });
-        this.setSize(500, 400);
-        this.setLocation(400, 500);
+        this.setSize(2560, 1600);
         this.setVisible(true);
         registerbutton.addMouseListener(new MouseAdapter() {
             @Override

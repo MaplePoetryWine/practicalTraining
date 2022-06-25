@@ -29,8 +29,8 @@ public class Surface extends JFrame{
                 super.mouseClicked(e);
             }
         });
-        this.setSize(400,600);
-        this.setLocation(500,600);
+        this.setSize(2560,1600);
+
         this.setVisible(true);
         viewPersonalInformationButton.addMouseListener(new MouseAdapter() {
             @Override

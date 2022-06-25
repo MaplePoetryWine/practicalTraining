@@ -28,7 +28,7 @@ public class revisePersonInfo extends JFrame {
         nametextField.setText(account.getName());
         teltextField.setText(account.getTel());
         this.add(revisePersonInfoPanel);
-        this.setSize(400,600);
+        this.setSize(2560,1600);
         this.setVisible(true);
 
         确定Button.addMouseListener(new MouseAdapter() {

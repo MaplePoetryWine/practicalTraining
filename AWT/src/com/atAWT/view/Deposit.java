@@ -20,7 +20,7 @@ public class Deposit extends JFrame{
     private AccountService accountService = new AccountService();
     public Deposit(Account account) {
         this.add(DepositPanel);
-        this.setSize(400,300);
+        this.setSize(2560,1600);
         this.setVisible(true);
         OKButton.addMouseListener(new MouseAdapter() {
             @Override

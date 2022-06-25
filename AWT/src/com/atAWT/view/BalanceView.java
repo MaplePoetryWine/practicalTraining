@@ -18,8 +18,7 @@ public class BalanceView extends JFrame {
 
     public BalanceView(Account account) {
         this.add(BalancePanel);
-        this.setSize(400,300);
-        this.setLocation(650,600);
+        this.setSize(2560,1600);
         this.setVisible(true);
         IDtextField1.setText(account.getID().toString());
         BalancetextField2.setText(String.valueOf(account.getBalance()));

@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.PersonInfo">
   <grid id="27dc6" binding="inofPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="1232" height="916"/>
     </constraints>
     <properties>
       <background color="-8355712"/>
@@ -15,7 +15,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Arial Black" size="18" style="1"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="ID："/>
         </properties>
       </component>
@@ -25,7 +25,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Arial Black" size="18" style="1"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="password:"/>
         </properties>
       </component>
@@ -35,7 +35,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Arial Black" size="18" style="1"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="name:"/>
         </properties>
       </component>
@@ -45,7 +45,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Arial Black" size="18" style="1"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="personID:"/>
         </properties>
       </component>
@@ -55,7 +55,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Arial Black" size="18" style="1"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="telephone:"/>
         </properties>
       </component>
@@ -68,7 +68,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font name="Fira Code" size="16" style="2"/>
+          <font name="Fira Code" size="72" style="2"/>
         </properties>
       </component>
       <component id="15fe7" class="javax.swing.JTextField" binding="pswtextField2">
@@ -80,7 +80,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font name="Consolas" size="16" style="2"/>
+          <font name="Consolas" size="72" style="2"/>
         </properties>
       </component>
       <component id="990ac" class="javax.swing.JTextField" binding="nametextField3">
@@ -92,7 +92,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font name="Consolas" size="16" style="2"/>
+          <font name="Consolas" size="72" style="2"/>
         </properties>
       </component>
       <component id="988d2" class="javax.swing.JTextField" binding="personidtextField4">
@@ -104,7 +104,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font name="Consolas" size="16" style="2"/>
+          <font name="Consolas" size="72" style="2"/>
         </properties>
       </component>
       <component id="66b51" class="javax.swing.JTextField" binding="teltextField5">
@@ -116,7 +116,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font name="Consolas" size="16" style="2"/>
+          <font name="Consolas" size="72" style="2"/>
         </properties>
       </component>
       <component id="842fc" class="javax.swing.JLabel">
@@ -125,7 +125,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Arial Black" size="18" style="1"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="balance:"/>
         </properties>
       </component>
@@ -138,7 +138,7 @@
         </constraints>
         <properties>
           <editable value="false"/>
-          <font name="Consolas" size="16" style="2"/>
+          <font name="Consolas" size="72" style="2"/>
         </properties>
       </component>
       <component id="6869a" class="javax.swing.JLabel">
@@ -147,7 +147,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <font name="Consolas" size="18" style="3"/>
+          <font name="Consolas" size="48" style="3"/>
           <text value="欢迎"/>
         </properties>
       </component>
@@ -158,7 +158,7 @@
         </constraints>
         <properties>
           <background color="-15695833"/>
-          <font name="Consolas" size="16" style="1"/>
+          <font name="Consolas" size="72" style="1"/>
           <text value="确定"/>
         </properties>
       </component>

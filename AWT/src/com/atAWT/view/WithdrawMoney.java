@@ -21,7 +21,7 @@ public class WithdrawMoney extends JFrame {
 
     public WithdrawMoney(Account account) {
         this.add(withdrawMoney);
-        this.setSize(400, 500);
+        this.setSize(2560, 1600);
         this.setVisible(true);
         OKButton.addMouseListener(new MouseAdapter() {
             @Override

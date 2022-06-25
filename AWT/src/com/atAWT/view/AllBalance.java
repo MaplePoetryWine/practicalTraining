@@ -18,6 +18,6 @@ public class AllBalance extends JFrame{
         double allAccountBalance = administratorService.getAllAccountBalance();
         allBalancetextField1.setText(String.valueOf(allAccountBalance));
         this.setVisible(true);
-        this.setSize(500,400);
+        this.setSize(2560,1600);
     }
 }
