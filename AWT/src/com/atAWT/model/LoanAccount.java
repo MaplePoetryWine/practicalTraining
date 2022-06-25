@@ -32,7 +32,7 @@ public class LoanAccount extends Account implements Serializable {
     }
 
     public LoanAccount(Account account) {
-        this(account, 100000);
+        this(account, 0);
     }
 
     public double getLoanAmount() {

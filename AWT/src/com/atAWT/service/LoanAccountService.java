@@ -25,7 +25,7 @@ public class LoanAccountService {
         LoanAccount loanAccount = selectLoanAccountById(accountId);
         if (loanAccount == null) {
             LoanAccount newLoanAccount = new LoanAccount(account);
-            U.loanMap.put(accountId, newLoanAccount);
+            U.accountMap.put(accountId, newLoanAccount);
             U.write();
             return newLoanAccount;
         }
@@ -39,7 +39,11 @@ public class LoanAccountService {
      */
     public LoanAccount selectLoanAccountById(Integer accountId) {
         U.load();
-        return U.loanMap.get(accountId);
+        try {
+            return (LoanAccount) U.accountMap.get(accountId);
+        } catch (ClassCastException e) {
+            return null;
+        }
     }
 
     /**
@@ -54,16 +58,14 @@ public class LoanAccountService {
         if (account == null) return false;
         if (! password.equals(account.getPassword())) return false;
 
-        double loanAmount = account.getLoanAmount();
-        if (loanAmount > amount) {
-            boolean deposit = accountService.deposit(accountId, account.getPassword(), amount);
-            if (deposit) {
-                account.setLoanAmount(loanAmount - amount);
-                U.load();
-                U.write();
-                return true;
-            }
+        boolean deposit = accountService.deposit(accountId, account.getPassword(), amount);
+        if (deposit) {
+            account.setLoanAmount(amount);
+            U.load();
+            U.write();
+            return true;
         }
+
         return false;
     }
 
