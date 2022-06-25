@@ -82,13 +82,14 @@ public class Surface extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                 loanAccount = loanAccountService.openLoanAccount(account.getID());
-                if (loanAccount != null){
+                loanAccount = loanAccountService.selectLoanAccountById(account.getID());
+                if (loanAccount == null) {
                     loanEligibility loanEligibility = new loanEligibility();
-                }else {
+                    loanAccountService.openLoanAccount(account.getID());
+                    loanAccount = loanAccountService.selectLoanAccountById(account.getID());
+                } else {
                     loan loan = new loan(loanAccount);
                 }
-
             }
         });
         repaymentButton.addMouseListener(new MouseAdapter() {
