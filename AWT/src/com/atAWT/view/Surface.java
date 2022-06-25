@@ -13,13 +13,13 @@ import java.awt.event.MouseEvent;
  */
 public class Surface extends JFrame{
     private JButton depositButton;
-    private JButton loanButton;
     private JButton withdrawalButton;
     private JButton TransferButton;
     private JButton viewPersonalInformationButton;
     private JButton modifyPersonalInformationButton;
     private JButton checkBalanceButton;
     private JPanel surface;
+    private JButton sqButton;
 
 
     public Surface(AccountService accountService,Account account) {

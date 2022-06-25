@@ -13,7 +13,7 @@ import java.awt.event.MouseEvent;
  */
 public class Deposit extends JFrame{
     private JTextField moneytextField1;
-    private JTextField pswtextField2;
+    private JPasswordField pswtextField2;
     private JButton OKButton;
     private JPanel DepositPanel;
     private JLabel error;
@@ -26,11 +26,16 @@ public class Deposit extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                boolean deposit = accountService.deposit(account.getID(), Double.parseDouble(moneytextField1.getText()));
+                boolean deposit = accountService.deposit(account.getID(),pswtextField2.getText(),Double.parseDouble(moneytextField1.getText()) );
                 if ( !deposit ){
                     error.setText("存款失败！");
                 }else{
                     error.setText("存款成功！");
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException ex) {
+                        throw new RuntimeException(ex);
+                    }
                     toClose();
                 }
             }
