@@ -1,7 +1,9 @@
 package com.atAWT.view;
 
 import com.atAWT.model.Account;
+import com.atAWT.model.LoanAccount;
 import com.atAWT.service.AccountService;
+import com.atAWT.service.LoanAccountService;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
@@ -19,8 +21,9 @@ public class Surface extends JFrame{
     private JButton modifyPersonalInformationButton;
     private JButton checkBalanceButton;
     private JPanel surface;
-    private JButton 申请其他的账户类型Button;
-
+    private JButton 贷款Button;
+    private JButton 还款Button;
+    private LoanAccountService loanAccountService = new LoanAccountService();
 
     public Surface(AccountService accountService,Account account) {
         this.add(surface);
@@ -73,6 +76,19 @@ public class Surface extends JFrame{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 Deposit deposit = new Deposit(account);
+            }
+        });
+        贷款Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                LoanAccount loanAccount = loanAccountService.openLoanAccount(account.getID());
+                if (loanAccount == null){
+                    loanEligibility loanEligibility = new loanEligibility();
+                }else {
+                    loan loan = new loan(loanAccount);
+                }
+
             }
         });
     }
