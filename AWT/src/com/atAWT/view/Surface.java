@@ -23,6 +23,7 @@ public class Surface extends JFrame{
     private JPanel surface;
     private JButton loanButton;
     private JButton repaymentButton;
+    private JButton 查看贷款余额Button;
     private LoanAccountService loanAccountService = new LoanAccountService();
     private LoanAccount loanAccount;
     public Surface(AccountService accountService,Account account) {
@@ -83,12 +84,13 @@ public class Surface extends JFrame{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                  loanAccount = loanAccountService.openLoanAccount(account.getID());
-                if (loanAccount != null){
-                    loanEligibility loanEligibility = new loanEligibility();
+                if (loanAccount == null){
+                    loanAccount = loanAccountService.selectLoanAccountById(account.getID());
+                    loan loan = new loan(loanAccount);
                 }else {
+                    loanEligibility loanEligibility = new loanEligibility();
                     loan loan = new loan(loanAccount);
                 }
-
             }
         });
         repaymentButton.addMouseListener(new MouseAdapter() {
@@ -97,6 +99,24 @@ public class Surface extends JFrame{
                 super.mouseClicked(e);
                 //还款
                 repayment repayment = new repayment(loanAccount);
+            }
+        });
+        查看贷款余额Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                //查看贷款余额
+//                loanAccount = loanAccountService.openLoanAccount(account.getID());
+                new checkLoanBalance(loanAccount);
+//                if (loanAccount == null){
+//                    new checkLoanBalance(loanAccount);
+//                }else {
+//                    new loanEligibility();
+//                    loanAccount = loanAccountService.selectLoanAccountById(account.getID());
+//
+//                }
+
+
             }
         });
     }

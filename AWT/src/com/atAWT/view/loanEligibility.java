@@ -22,12 +22,12 @@ public class loanEligibility extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                error.setText("恭喜您！您具有开通贷款账户的资格。");
                 try {
-                    Thread.sleep(1500);
+                    Thread.sleep(9999999999999l);
                 } catch (InterruptedException ex) {
                     throw new RuntimeException(ex);
                 }
+                error.setText("恭喜您！您具有开通贷款账户的资格。");
                 toClose();
             }
         });
