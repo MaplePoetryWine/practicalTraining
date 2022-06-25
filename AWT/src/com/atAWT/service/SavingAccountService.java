@@ -11,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author wspstart
  * @create 2022-06-24 12:43
  */
+@SuppressWarnings("all")
 public class SavingAccountService {
 
     private static Lock lock = new ReentrantLock();

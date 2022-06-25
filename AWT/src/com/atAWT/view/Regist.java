@@ -11,7 +11,7 @@ import java.awt.event.MouseEvent;
  * @author wspstart
  * @create 2022-06-24 16:06
  */
-public class Regist extends JFrame{
+public class Regist extends JFrame {
 
     private JTextField PersonIDField;
     private JTextField nameField2;
@@ -35,20 +35,24 @@ public class Regist extends JFrame{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 Account account = new Account(passwordField1.getText(), nameField2.getText(), PersonIDField.getText(), telField3.getText());
+                if (!personIdIsTrue) {
+                    error.setText("请检查身份证号是否输入正确。");
+                    return;
+                }
                 Account register = accountS.register(account);
-                if (register == null && personIdIsTrue){
-                    error.setText("注册失败!请检查身份证号是否输入正确。");
+                if (register == null) {
+                    error.setText("注册失败！");
                 } else {
-                    if (personIderrorLabel.getText().equals("X")){
+                    if (personIderrorLabel.getText().equals("X")) {
                         error.setText("注册失败!身份证号输入错误！");
-                    }else{
-                        error.setText(" 您的账号为：" + account.getID().toString());
+                    } else {
+                        AccountID accountID = new AccountID(account);
                     }
                 }
             }
         });
-        this.setSize(500,600);
-        this.setLocation(400,500);
+        this.setSize(500, 600);
+        this.setLocation(400, 500);
         this.setVisible(true);
         PersonIDField.addMouseListener(new MouseAdapter() {
             @Override
