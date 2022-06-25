@@ -39,7 +39,11 @@ public class Regist extends JFrame{
                 if (register == null && personIdIsTrue){
                     error.setText("注册失败!请检查身份证号是否输入正确。");
                 } else {
-                    error.setText(" 您的账号为：" + account.getID().toString());
+                    if (personIderrorLabel.getText().equals("X")){
+                        error.setText("注册失败!");
+                    }else{
+                        error.setText(" 您的账号为：" + account.getID().toString());
+                    }
                 }
             }
         });

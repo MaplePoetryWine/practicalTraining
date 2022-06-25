@@ -15,7 +15,7 @@ public class Info extends JFrame{
     private JTable table;
     private JScrollPane jScrollPane;
 
-    private Object[] th = new Object[4];
+    private Object[] th = new Object[5];
     private Object[][] td;
 
     public Info() {
@@ -50,6 +50,5 @@ public class Info extends JFrame{
         table.setVisible(true);
         jScrollPane.setVisible(true);
         InfoPanel.setVisible(true);
-
     }
 }
