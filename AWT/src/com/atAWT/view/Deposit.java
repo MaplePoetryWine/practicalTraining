@@ -29,8 +29,15 @@ public class Deposit extends JFrame{
                 boolean deposit = accountService.deposit(account.getID(), Double.parseDouble(moneytextField1.getText()));
                 if ( !deposit ){
                     error.setText("存款失败！");
+                }else{
+                    error.setText("存款成功！");
+                    toClose();
                 }
             }
         });
+    }
+
+    private void toClose() {
+        this.setVisible(false);
     }
 }

@@ -77,7 +77,7 @@
         <properties>
           <background color="-8355712"/>
           <font name="Arial Black" size="20" style="3"/>
-          <text value="欢迎"/>
+          <text value="欢迎来到ATM界面"/>
         </properties>
       </component>
       <component id="15a86" class="javax.swing.JLabel" binding="prompt">

@@ -29,15 +29,8 @@ public class DrawMoney extends JFrame {
                 super.mouseClicked(e);
                 //写的代码
                 Account account_ = accountService.selectById(Integer.parseInt(IDField.getText()));
-                if (account_.getID() == null || account.getBalance() > Double.parseDouble(moneyField.getText())) {
-                    error.setText("转账失败！！！");
-                } else {
-//                    account_.setBalance(account_.getBalance() +Double.parseDouble(moneyField.getText()) );
-//                    account.setBalance(account.getBalance() - Double.parseDouble(moneyField.getText()));
-
-                }
-                toClose();
-
+                String transfer = accountService.transfer(account.getID(), account_.getID(), Double.parseDouble(moneyField.getText()));
+                error.setText(transfer);
             }
         });
     }
