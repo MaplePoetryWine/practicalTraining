@@ -93,7 +93,7 @@
           <background color="-8355712"/>
           <font name="Arial Black" size="48" style="3"/>
           <foreground color="-1887174"/>
-          <text value="Label"/>
+          <text value=""/>
         </properties>
       </component>
     </children>
