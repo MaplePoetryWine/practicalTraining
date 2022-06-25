@@ -12,7 +12,7 @@
     <children>
       <component id="68bd3" class="javax.swing.JButton" binding="xxButton">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
@@ -23,13 +23,25 @@
       </component>
       <component id="9ec30" class="javax.swing.JButton" binding="balanceButton">
         <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
           <background color="-8355712"/>
           <font name="Consolas" size="18" style="3"/>
           <text value="统计所有用户的余额总数"/>
+        </properties>
+      </component>
+      <component id="621e5" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-8355712"/>
+          <font name="Consolas" size="16" style="3"/>
+          <foreground color="-1887174"/>
+          <text value="欢迎来到管理员界面"/>
         </properties>
       </component>
     </children>

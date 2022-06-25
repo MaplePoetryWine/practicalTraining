@@ -13,10 +13,10 @@ import java.awt.event.MouseEvent;
  */
 public class DrawMoney extends JFrame {
     private JTextField IDField;
-    private JPasswordField moneyField;
+    private JTextField moneyField;
     private JButton OKButton;
     private JPanel drawMoneyPanel;
-    private JTextField pswtextField1;
+    private JPasswordField pswtextField1;
     private JLabel error;
 
     public DrawMoney(AccountService accountService, Account account) {
@@ -28,9 +28,13 @@ public class DrawMoney extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 //写的代码
-                Account account_ = accountService.selectById(Integer.parseInt(IDField.getText()));
-                String transfer = accountService.transfer(account.getID(), account_.getID(), Double.parseDouble(moneyField.getText()));
-                error.setText(transfer);
+                try {
+                    Account account_ = accountService.selectById(Integer.parseInt(IDField.getText()));
+                    String transfer = accountService.transfer(account.getID(), account_.getID(), Double.parseDouble(moneyField.getText()));
+                    error.setText(transfer);
+                } catch (NumberFormatException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
     }

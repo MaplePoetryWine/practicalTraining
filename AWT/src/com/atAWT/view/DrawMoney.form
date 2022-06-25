@@ -39,7 +39,7 @@
           <text value="Label"/>
         </properties>
       </component>
-      <component id="16541" class="javax.swing.JPasswordField" binding="moneyField">
+      <component id="5f0b6" class="javax.swing.JTextField" binding="moneyField">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -69,7 +69,7 @@
           <text value="请输入转入的金额："/>
         </properties>
       </component>
-      <component id="310de" class="javax.swing.JTextField" binding="pswtextField1">
+      <component id="d6d20" class="javax.swing.JPasswordField" binding="pswtextField1">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
