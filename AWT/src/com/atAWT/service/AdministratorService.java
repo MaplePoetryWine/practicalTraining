@@ -3,7 +3,7 @@ package com.atAWT.service;
 import com.atAWT.dao.impl.AccountDaoImpl;
 import com.atAWT.model.Account;
 
-import java.util.Collection;
+import java.util.*;
 
 public class AdministratorService {
 
@@ -25,5 +25,25 @@ public class AdministratorService {
             balance += account.getBalance();
         }
         return balance;
+    }
+
+    /**
+     *
+     * @return 返回所有用户按照余额排名的一个有序集合
+     */
+    public LinkedHashMap<Integer, Account> getAllAccountOrderByBalance() {
+        Collection<Account> accounts = getAllAccount();
+        Account[] accountArray = accounts.toArray(new Account[0]);
+        Arrays.sort(accountArray, (o1, o2) -> {
+            Double o1Balance = o1.getBalance();
+            Double o2Balance = o2.getBalance();
+            return o2Balance.compareTo(o1Balance); // 降序
+        });
+
+        LinkedHashMap<Integer, Account> accountMap = new LinkedHashMap<>();
+        for (Account account : accountArray) {
+            accountMap.put(account.getID(), account);
+        }
+        return accountMap;
     }
 }
