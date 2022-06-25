@@ -22,23 +22,32 @@ public class Login extends JFrame {
 
     public Login() {
         this.add(loginPanel);
+        this.setTitle("用户登录");
         loginbutton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 String ID = textField1.getText();
                 String psw = passwordField1.getText();
-                if (ID.equals("root") && psw.equals("56789")){
-                    new AdministratorView();
-                }else{
-                    Account isTrue = accountS.login(ID,psw);
-                    if (isTrue == null) {
-                        prompt.setText("登录失败！！！");
-                    } else {
-                        prompt.setText("登录成功！！！");
-                        Surface surface = new Surface(accountS, isTrue);
-                        toClose();
+
+                try {
+                    if (ID.equals("") || psw.equals("")) {
+                        prompt.setText("您还没有正确输入！");
                     }
+                    if (ID.equals("root") && psw.equals("56789")) {
+                        new AdministratorView();
+                    } else {
+                        Account isTrue = accountS.login(ID, psw);
+                        if (isTrue == null) {
+                            prompt.setText("登录失败！！！");
+                        } else {
+                            prompt.setText("登录成功！！！");
+                            Surface surface = new Surface(accountS, isTrue);
+                            toClose();
+                        }
+                    }
+                } catch (Exception ex) {
+                  ex.printStackTrace();
                 }
             }
         });

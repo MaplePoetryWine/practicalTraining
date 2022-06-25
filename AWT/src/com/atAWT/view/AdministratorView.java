@@ -14,6 +14,7 @@ public class AdministratorView extends JFrame {
     private JButton xxButton;
     private JButton balanceButton;
     private JPanel AdministratorPanel;
+    private JButton 查看用户资产排名Button;
     private  AdministratorService administrator = new AdministratorService();
     public AdministratorView() {
         this.add(AdministratorPanel);

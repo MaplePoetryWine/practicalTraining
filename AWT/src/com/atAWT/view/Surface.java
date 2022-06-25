@@ -19,6 +19,7 @@ public class Surface extends JFrame{
     private JButton modifyPersonalInformationButton;
     private JButton checkBalanceButton;
     private JPanel surface;
+    private JButton 申请其他的账户类型Button;
 
 
     public Surface(AccountService accountService,Account account) {

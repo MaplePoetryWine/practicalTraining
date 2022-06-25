@@ -28,13 +28,18 @@ public class DrawMoney extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 //写的代码
-                try {
-                    Account account_ = accountService.selectById(Integer.parseInt(IDField.getText()));
-                    String transfer = accountService.transfer(account.getID(), account_.getID(), Double.parseDouble(moneyField.getText()));
-                    error.setText(transfer);
-                } catch (NumberFormatException ex) {
-                    throw new RuntimeException(ex);
-                }
+
+                    Account account2 = accountService.selectById(Integer.parseInt(IDField.getText()));
+                    String transfer = accountService.transfer(account.getID(), account2.getID(), Double.parseDouble(moneyField.getText()));
+
+                    if ("true".equals(transfer)){
+                        error.setText("转账成功！！！");
+                    }else {
+                        String[] split = transfer.split(":");
+                        error.setText(split[1]);
+                    }
+//                    String transfer = accountService.transfer(account.getID(), account2.getID(), Double.parseDouble(moneyField.getText()));
+//                    error.setText(transfer);
             }
         });
     }

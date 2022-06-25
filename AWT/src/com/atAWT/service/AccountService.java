@@ -30,14 +30,15 @@ public class AccountService {
      * @return
      */
     public Account login(String accountId, String password) {
-        Account account = AccountDaoImpl.map.get(Integer.parseInt(accountId));
-        if (account != null
-                && password != null
-                && password.equals(account.getPassword())) {
+        Account account = U.accountMap.get(Integer.parseInt(accountId));
+        account.setPassword(password);
+
+        if (accountDao.login(account)) {
             return account;
         } else {
             return null;
         }
+
     }
 
     /**
@@ -49,7 +50,7 @@ public class AccountService {
 //        HashMap<Integer, Account> accountMap = U.accountMap;
 //        Collection<Account> accounts = accountMap.values();
 
-        Collection<Account> accounts = AccountDaoImpl.map.values();
+        Collection<Account> accounts = U.accountMap.values();
         Set<String> set = new HashSet<>();
         for (Account otherAccount : accounts) {
             set.add(otherAccount.getPersonID());
@@ -77,7 +78,7 @@ public class AccountService {
      * @return 返回一个对应的对象
      */
     public Account selectById(Integer id) {
-        return AccountDaoImpl.map.get(id);
+        return U.accountMap.get(id);
     }
 
     /**
@@ -128,8 +129,8 @@ public class AccountService {
      */
     public String transfer(Integer payId, Integer payeeId, double amount) {
         lock.lock();
-        Account payAccount = AccountDaoImpl.map.get(payId);
-        Account payeeAccount = AccountDaoImpl.map.get(payeeId);
+        Account payAccount = U.accountMap.get(payId);
+        Account payeeAccount = U.accountMap.get(payeeId);
 
 
         // 用户可能不存在
@@ -150,23 +151,37 @@ public class AccountService {
                 return "error: 用户余额不足";
             }
 
-            payAccount.setBalance(payAccount.getBalance() - amount);
-            payeeAccount.setBalance(payAccount.getBalance() + amount);
+            accountDao.withdrawMoney(payAccount, amount);
+            accountDao.deposit(payeeId, amount);
 
             return "true";
         } catch (Exception e) {
             if (payAccount.getBalance() != payBalance) {
                 payAccount.setBalance(payBalance);
-                AccountDaoImpl.map.put(payId, payAccount);
+                U.accountMap.put(payId, payAccount);
             }
             if (payeeAccount.getBalance() != payeeBalance) {
                 payeeAccount.setBalance(payeeBalance);
-                AccountDaoImpl.map.put(payeeId, payeeAccount);
+                U.accountMap.put(payeeId, payeeAccount);
             }
+            U.write();
+            U.load();
             return "error: 系统异常！转账失败";
         } finally {
 //            U.writeAccount();
+            U.write();
+            U.load();
             lock.unlock();
         }
+    }
+
+    /**
+     *
+     * @param accountId 要查询用户的 id
+     * @return 返回该用户的余额
+     */
+    public double getBalanceById(Integer accountId) {
+        U.load();
+        return selectById(accountId).getBalance();
     }
 }

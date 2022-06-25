@@ -9,25 +9,25 @@ import java.util.HashMap;
 
 public class AccountDaoImpl implements AccountDao {
 
-    /**
-     * 存放所有用户，用于序列化对象
-     */
-    public static HashMap<Integer, Account> map = new HashMap<>();
+//    /**
+//     * 存放所有用户，用于序列化对象
+//     */
+//    public static HashMap<Integer, Account> map = new HashMap<>();
 
-    /**
-     * 类加载时自动读取已创建的对象
-     */
-    static {
-        try {
-            updateList();
-        } catch (EOFException e) {
-            System.out.print("");
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-    }
+//    /**
+//     * 类加载时自动读取已创建的对象
+//     */
+//    static {
+//        try {
+//            updateList();
+//        } catch (EOFException e) {
+//            System.out.print("");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (ClassNotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
 
     /**
      * 处理注册请求
@@ -38,51 +38,55 @@ public class AccountDaoImpl implements AccountDao {
      */
     @Override
     public boolean register(Account account) throws IOException, ClassNotFoundException {
-        updateList();
-        map.put(account.getID(), account);
-        updateFile();
+//        updateList();
+        U.accountMap.put(account.getID(), account);
+        U.write();
+        U.load();
+//        updateFile();
         return true;
     }
 
-    /**
-     * 从 list 中序列化对象到文件中
-     * @throws IOException
-     */
-    private static void updateFile() throws IOException {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("AWT/src/com/atAWT/model/account.obj"))) {
+//    /**
+//     * 从 list 中序列化对象到文件中
+//     * @throws IOException
+//     */
+//    private static void updateFile() throws IOException {
+//        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("AWT/src/com/atAWT/model/account.obj"))) {
+//
+//            oos.writeObject(U.accountMap.values().toArray(new Account[0]));
+//            oos.flush();
+//
+//        } catch (EOFException e) {
+//            System.out.print("");
+//        }
+//    }
 
-            oos.writeObject(map.values().toArray(new Account[0]));
-            oos.flush();
-
-        } catch (EOFException e) {
-            System.out.print("");
-        }
-    }
-
-    /**
-     * 从 文件 中反序列化对象到 list
-     * @throws IOException
-     * @throws ClassNotFoundException
-     */
-    private static void updateList() throws IOException, ClassNotFoundException {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("AWT/src/com/atAWT/model/account.obj"))) {
-
-            Account[] arr = (Account[]) ois.readObject();
-            if (arr != null) {
-                for (Account account : arr) {
-                    map.put(account.getID(), account);
-                }
-            }
-        } catch (EOFException e) {
-            System.out.print("");
-        }
-    }
+//    /**
+//     * 从 文件 中反序列化对象到 list
+//     * @throws IOException
+//     * @throws ClassNotFoundException
+//     */
+//    private static void updateList() throws IOException, ClassNotFoundException {
+//        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("AWT/src/com/atAWT/model/account.obj"))) {
+//
+//            Account[] arr = (Account[]) ois.readObject();
+//            if (arr != null) {
+//                for (Account account : arr) {
+//                    U.accountMap.put(account.getID(), account);
+//                }
+//            }
+//        } catch (EOFException e) {
+//            System.out.print("");
+//        }
+//    }
 
     @Override
     public boolean login(Account account) {
         String inPassword = account.getPassword();
         String truePassword = U.accountMap.get(account.getID()).getPassword();
         if(truePassword.equals(inPassword)){
+            U.write();
+            U.load();
             return true;
         }else {
             return false;
@@ -95,10 +99,12 @@ public class AccountDaoImpl implements AccountDao {
 
     @Override
     public boolean deposit(Integer accountId, double amount) throws IOException {
-        Account account = map.get(accountId);
+        Account account = U.accountMap.get(accountId);
         if (account != null) {
             account.setBalance(account.getBalance() + amount);
-            updateFile();
+//            updateFile();
+            U.write();
+            U.load();
             return true;
         } else {
             return false;
@@ -108,6 +114,8 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public boolean withdrawMoney(Account account, double amount) {
         account.setBalance(account.getBalance() - amount);
+        U.write();
+        U.load();
         return true;
     }
 }
