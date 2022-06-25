@@ -15,13 +15,13 @@ public class Info extends JFrame{
     private JTable table;
     private JScrollPane jScrollPane;
 
-    private Object[] th = new Object[4];
+    private Object[] th = new Object[5];
     private Object[][] td;
 
     public Info() {
         this.add(InfoPanel);
         this.setVisible(true);
-        this.setSize(500,600);
+        this.setSize(550,500);
     }
 
     public Info(Collection<Account> collection){
@@ -42,14 +42,14 @@ public class Info extends JFrame{
             total ++;
         }
         table = new JTable(td, th);
-        table.setBounds(0, 0, 600, 500);
-
-        jScrollPane = new JScrollPane(table);
-        jScrollPane.setBounds(0, 0, 600, 500);
-        InfoPanel.add(jScrollPane);
+        table.setBounds(0, 0, 1000, 500);
         table.setVisible(true);
+        table.setSize(700,600);
+        jScrollPane = new JScrollPane(table);
+        jScrollPane.setBounds(0, 0, 1000, 500);
+        jScrollPane.setSize(700,600);
+        InfoPanel.add(jScrollPane);
         jScrollPane.setVisible(true);
         InfoPanel.setVisible(true);
-
     }
 }

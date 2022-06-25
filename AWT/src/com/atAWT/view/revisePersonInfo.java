@@ -18,17 +18,15 @@ public class revisePersonInfo extends JFrame {
     private JTextField pswtextField2;
     private JTextField nametextField2;
     private JTextField teltextField2;
-    private JTextField balancetextField2;
-    private JLabel error;
+    private JLabel welom;
     private JPanel revisePersonInfoPanel;
     private JButton 确定Button;
+    private JLabel error;
 
     public revisePersonInfo(Account account){
         pswtextField.setText(account.getPassword());
         nametextField.setText(account.getName());
         teltextField.setText(account.getTel());
-        balancetextField.setText(String.valueOf(account.getBalance()));
-//
         this.add(revisePersonInfoPanel);
         this.setSize(400,600);
         this.setVisible(true);
@@ -38,11 +36,6 @@ public class revisePersonInfo extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                    if (! balancetextField2.getText().equals("")){
-                        account.setBalance(Double.parseDouble(balancetextField2.getText()));
-                    }else{
-                        account.setBalance(Double.parseDouble(balancetextField.getText()));
-                    }
                     if (! pswtextField2.getText().equals("")){
                         account.setPassword(pswtextField2.getText());
                     }else {
@@ -58,6 +51,7 @@ public class revisePersonInfo extends JFrame {
                     }else {
                         account.setTel(teltextField.getText());
                     }
+                    error.setText("修改成功！！！");
                     toClose();
             }
         });

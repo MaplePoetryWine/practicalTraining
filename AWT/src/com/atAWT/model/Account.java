@@ -11,7 +11,7 @@ import java.util.*;
  * @author wspstart
  * @create 2022-06-21 8:50
  */
-public class Account implements Serializable {
+public class Account implements Comparator<Double>, Serializable {
     private static final long serialVersionUID = 42L;
     private Integer ID = UserID.getID();//账号
     private String password;//密码
@@ -88,5 +88,10 @@ public class Account implements Serializable {
                 ", tel='" + tel + '\'' +
                 ", balance=" + balance +
                 '}';
+    }
+
+    @Override
+    public int compare(Double o1, Double o2) {
+        return o1.compareTo(o2);
     }
 }

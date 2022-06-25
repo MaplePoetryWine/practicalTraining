@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.AccountID">
+  <grid id="27dc6" binding="AccountIDPanle" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties>
+      <background color="-8355712"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="1924d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Consolas" size="18" style="1"/>
+          <text value="注册成功！您的账号为："/>
+        </properties>
+      </component>
+      <component id="74ee4" class="javax.swing.JTextField" binding="IDField1">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-1887174"/>
+          <editable value="false"/>
+          <font name="Arial Black" size="18" style="1"/>
+        </properties>
+      </component>
+      <component id="1094c" class="javax.swing.JButton" binding="OKButton">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <background color="-15695833"/>
+          <font name="Consolas" size="18" style="1"/>
+          <text value="确定"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

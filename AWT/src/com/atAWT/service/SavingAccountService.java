@@ -11,6 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @author wspstart
  * @create 2022-06-24 12:43
  */
+@SuppressWarnings("all")
 public class SavingAccountService {
 
     private static Lock lock = new ReentrantLock();
@@ -91,7 +92,7 @@ public class SavingAccountService {
             }
             return "error: 系统异常！转账失败";
         } finally {
-            U.writeAccount();
+
             lock.unlock();
         }
     }
@@ -109,7 +110,7 @@ public class SavingAccountService {
 
         } finally {
             lock.unlock();
-            U.writeAccount();
+
         }
 
     }
@@ -144,7 +145,7 @@ public class SavingAccountService {
             return "系统异常，取款失败";
         } finally {
             lock.unlock();
-            U.writeAccount();
+
         }
 
     }
