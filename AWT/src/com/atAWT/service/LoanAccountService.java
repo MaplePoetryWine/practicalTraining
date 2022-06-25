@@ -108,18 +108,5 @@ public class LoanAccountService {
         return loanAccount.getLoanAmount();
     }
 
-    /**
-     *
-     * @return 返回所有贷款用户的贷款总额
-     */
-    public double selectAllLoanAmount() {
-        Collection<Account> accounts = U.accountMap.values();
-        double sum = 0;
-        for (Account account : accounts) {
-            if (account.getClass() == LoanAccount.class) {
-                sum += ((LoanAccount) account).getLoanAmount();
-            }
-        }
-        return sum;
-    }
+
 }
