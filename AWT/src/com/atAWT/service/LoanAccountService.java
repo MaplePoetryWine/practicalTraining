@@ -89,8 +89,9 @@ public class LoanAccountService {
             boolean b = accountService.withdrawMoney(accountId, account.getPassword(), amount);
             if (b) {
                 account.setLoanAmount(account.getLoanAmount() + amount);
-                U.load();
                 U.write();
+                U.load();
+
                 return true;
             }
         }

@@ -89,7 +89,6 @@ public class Surface extends JFrame{
                     loan loan = new loan(loanAccount);
                 }else {
                     loanEligibility loanEligibility = new loanEligibility();
-                    loan loan = new loan(loanAccount);
                 }
             }
         });
