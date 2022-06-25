@@ -24,7 +24,7 @@ public class Surface extends JFrame{
     private JButton loanButton;
     private JButton repaymentButton;
     private LoanAccountService loanAccountService = new LoanAccountService();
-
+    private LoanAccount loanAccount;
     public Surface(AccountService accountService,Account account) {
         this.add(surface);
         checkBalanceButton.addMouseListener(new MouseAdapter() {
@@ -82,8 +82,8 @@ public class Surface extends JFrame{
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
-                LoanAccount loanAccount = loanAccountService.openLoanAccount(account.getID());
-                if (loanAccount == null){
+                 loanAccount = loanAccountService.openLoanAccount(account.getID());
+                if (loanAccount != null){
                     loanEligibility loanEligibility = new loanEligibility();
                 }else {
                     loan loan = new loan(loanAccount);
@@ -96,6 +96,7 @@ public class Surface extends JFrame{
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 //还款
+                repayment repayment = new repayment(loanAccount);
             }
         });
     }

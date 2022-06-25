@@ -104,6 +104,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <background color="-8355712"/>
           <font name="Consolas" size="72" style="1"/>
           <text value="还款"/>
         </properties>
