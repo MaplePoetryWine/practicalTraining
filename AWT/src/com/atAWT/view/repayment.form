@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.repayment">
   <grid id="27dc6" binding="rePaymentPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="1047" height="412"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -13,6 +13,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="72" style="3"/>
           <text value="请输入还款金额："/>
         </properties>
       </component>
@@ -22,6 +23,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="72" style="3"/>
           <text value="请输入验证密码："/>
         </properties>
       </component>
@@ -32,7 +34,10 @@
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Arial Black" size="72" style="3"/>
+          <text value=""/>
+        </properties>
       </component>
       <component id="32b60" class="javax.swing.JPasswordField" binding="passwordField1" default-binding="true">
         <constraints>
@@ -41,7 +46,10 @@
           </grid>
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <font name="Arial Black" size="72" style="1"/>
+          <text value=""/>
+        </properties>
       </component>
       <component id="c04a6" class="javax.swing.JButton" binding="okbutton">
         <constraints>
@@ -49,6 +57,8 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <background color="-15695833"/>
+          <font name="Arial Black" size="72" style="1"/>
           <text value="确定"/>
         </properties>
       </component>
@@ -58,6 +68,7 @@
           <gridbag weightx="0.0" weighty="0.0" ipady="20"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="48" style="1"/>
           <text value=""/>
         </properties>
       </component>
@@ -67,6 +78,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="48" style="3"/>
           <text value="欢迎来到还款界面！"/>
         </properties>
       </component>

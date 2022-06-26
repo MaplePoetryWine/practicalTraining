@@ -17,7 +17,7 @@ public class loanEligibility extends JFrame{
     public loanEligibility() {
         this.add(isloanPanel);
         this.setVisible(true);
-        this.setSize(600,500);
+        this.setSize(2560,1600);
         detectButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

@@ -21,7 +21,7 @@ public class loan extends JFrame{
     public loan(LoanAccount loanAccount) {
         this.add(loanPanel);
         this.setVisible(true);
-        this.setSize(600,700);//
+        this.setSize(2560,1600);//
         OKButton.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

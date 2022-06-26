@@ -19,7 +19,7 @@ public class checkLoanBalance extends JFrame {
     public checkLoanBalance(LoanAccount account) {
         this.setVisible(true);
         this.add(checkPanel);
-        this.setSize(500,600);
+        this.setSize(2560,1600);
         IDField1.setText(account.getID().toString());
         moneytextField2.setText(String.valueOf(loanAccountService.selectLoanAmount(account.getID())));
     }

@@ -2,7 +2,7 @@
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.atAWT.view.checkLoanBalance">
   <grid id="27dc6" binding="checkPanel" layout-manager="GridBagLayout">
     <constraints>
-      <xy x="20" y="20" width="500" height="400"/>
+      <xy x="20" y="20" width="1143" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
@@ -13,6 +13,7 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="72" style="3"/>
           <text value="账号为："/>
         </properties>
       </component>
@@ -30,16 +31,9 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <editable value="false"/>
+          <font name="Consolas" size="72" style="3"/>
           <text value=""/>
-        </properties>
-      </component>
-      <component id="e4f45" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-          <gridbag weightx="0.0" weighty="0.0"/>
-        </constraints>
-        <properties>
-          <text value="，您的还有"/>
         </properties>
       </component>
       <component id="643d1" class="javax.swing.JTextField" binding="moneytextField2">
@@ -50,6 +44,8 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <editable value="false"/>
+          <font name="Consolas" size="72" style="3"/>
           <text value=""/>
         </properties>
       </component>
@@ -59,7 +55,18 @@
           <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
+          <font name="Consolas" size="72" style="3"/>
           <text value="元，未还！"/>
+        </properties>
+      </component>
+      <component id="e4f45" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <font name="Consolas" size="72" style="3"/>
+          <text value="，您的还有"/>
         </properties>
       </component>
     </children>

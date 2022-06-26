@@ -1,10 +1,13 @@
 package com.atAWT.view;
 
+import com.atAWT.SortInformation;
+import com.atAWT.model.Account;
 import com.atAWT.service.AdministratorService;
 
 import javax.swing.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.LinkedHashMap;
 
 /**
  * @author wspstart
@@ -32,6 +35,14 @@ public class AdministratorView extends JFrame {
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
                 new AllBalance();
+            }
+        });
+        查看用户资产排名Button.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                super.mouseClicked(e);
+                LinkedHashMap<Integer, Account> allAccountOrderByBalance = administrator.getAllAccountOrderByBalance();
+                new SortInformation(allAccountOrderByBalance);
             }
         });
     }

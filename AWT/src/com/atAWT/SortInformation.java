@@ -1,30 +1,31 @@
-package com.atAWT.view;
+package com.atAWT;
 
 import com.atAWT.model.Account;
 
 import javax.swing.*;
 import java.util.Collection;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 /**
  * @author wspstart
- * @create 2022-06-25 10:21
+ * @create 2022-06-26 1:23
  */
-public class Info extends JFrame{
-
-    private JPanel InfoPanel;
+public class SortInformation extends JFrame {
+    private JPanel InfoPanel2;
     private JTable table;
     private JScrollPane jScrollPane;
 
     private Object[] th = new Object[6];
     private Object[][] td;
 
-    public Info() {
-        this.add(InfoPanel);
+    public SortInformation() {
+        this.add(InfoPanel2);
         this.setVisible(true);
-        this.setSize(550,500);
+        this.setSize(550, 500);
     }
 
-    public Info(Collection<Account> collection){
+    public SortInformation(LinkedHashMap<Integer, Account> allAccountOrderByBalance) {
         this();
         th[0] = "ID";
         th[1] = "name";
@@ -32,17 +33,19 @@ public class Info extends JFrame{
         th[3] = "telephone";
         th[4] = "balance";
         th[5] = "账户类型";
-        td = new Object[collection.size()][th.length];
+        td = new Object[allAccountOrderByBalance.size()][th.length];
+        Set<Integer> integers = allAccountOrderByBalance.keySet();
         int total = 0;
-        for (Account account : collection){
+        for (Integer integer : integers) {
+            Account account = allAccountOrderByBalance.get(integer);
             td[total][0] = account.getID();
             td[total][1] = account.getName();
             td[total][2] = account.getPersonID();
             td[total][3] = account.getTel();
             td[total][4] = account.getBalance();
-            if (account.getClass() == Account.class){
+            if (account.getClass() == Account.class) {
                 td[total][5] = "储蓄账户";
-            }else {
+            } else {
                 td[total][5] = "贷款账户";
             }
             total ++;
@@ -50,12 +53,13 @@ public class Info extends JFrame{
         table = new JTable(td, th);
         table.setBounds(0, 0, 1000, 500);
         table.setVisible(true);
-        table.setSize(700,600);
+        table.setSize(700, 600);
         jScrollPane = new JScrollPane(table);
         jScrollPane.setBounds(0, 0, 1000, 500);
-        jScrollPane.setSize(700,600);
-        InfoPanel.add(jScrollPane);
+        jScrollPane.setSize(700, 600);
+        InfoPanel2.add(jScrollPane);
         jScrollPane.setVisible(true);
-        InfoPanel.setVisible(true);
+        InfoPanel2.setVisible(true);
     }
+
 }
